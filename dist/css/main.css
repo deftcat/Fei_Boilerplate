@@ -1,10 +1,12 @@
 /*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
 
+
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
+
 
 /* ==========================================================================
    Base styles: opinionated defaults
@@ -15,6 +17,7 @@ html {
     font-size: 1em;
     line-height: 1.4;
 }
+
 
 /*
  * Remove text-shadow in selection highlight:
@@ -34,6 +37,7 @@ html {
     text-shadow: none;
 }
 
+
 /*
  * A better looking default horizontal rule
  */
@@ -46,6 +50,7 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
+
 
 /*
  * Remove the gap between audio, canvas, iframes,
@@ -62,6 +67,7 @@ video {
     vertical-align: middle;
 }
 
+
 /*
  * Remove default fieldset styles.
  */
@@ -72,6 +78,7 @@ fieldset {
     padding: 0;
 }
 
+
 /*
  * Allow only vertical resizing of textareas.
  */
@@ -79,6 +86,7 @@ fieldset {
 textarea {
     resize: vertical;
 }
+
 
 /* ==========================================================================
    Browser Upgrade Prompt
@@ -91,29 +99,149 @@ textarea {
     padding: 0.2em 0;
 }
 
+
 /* ==========================================================================
-   Author's custom styles
+   Author's custom styles pixel=1200
    ========================================================================== */
 
+body {
+    font-weight: lighter;
+}
 
 
+/*The navigator bookmark*/
+
+.navigator {
+    float: left;
+    width: 20%;
+    background: #382d27;
+}
+
+.navigator h1 {
+    text-align: center;
+    color: wheat;
+}
+
+.tab {
+    display: block;
+}
+
+ul.tab {
+    list-style-type: none;
+    /*navigator need no bullet*/
+    padding: 6em 1.5em;
+}
+
+li.tab {
+    margin: 1em;
+    padding: 0.2em 1em 0.1em 7px;
+    width: 4px;
+    background: darkolivegreen;
+    box-shadow: -4px 4px 20px 1px;
+    border-radius: 10% 90%;
+    transition: 1s;
+}
+
+li.tab a {
+    /*padding: 1em;*/
+    text-decoration: none;
+    color: #e3f1d5;
+}
+
+li.tab:hover {
+    border-radius: 90% 10%;
+    background: #821639;
+}
+
+.copyright {
+    margin: 1em;
+}
+
+.copyright .contact li {
+    display: inline-block;
+    border: 1px #5a4b4b solid;
+    text-align: center;
+    size: 1px 1px;
+    width: 1.5em;
+    height: 1.5em;
+    list-style-type: none;
+    transition: 1s;
+}
+
+ul.contact.icon {
+    margin: inherit;
+    padding-left: inherit;
+}
+
+.copyright .contact li {
+    display: inline-block;
+    border: 1px #5a4b4b solid;
+    text-align: center;
+    size: 1px 1px;
+    width: 1.5em;
+    height: 1.5em;
+    list-style-type: none;
+    transform: 1.5s;
+}
+
+.copyright .contact li:hover {
+    border-color: transparent;
+    box-shadow: 0px 0px 2px 2px rgb(80, 48, 48);
+}
+
+.copyright .contact a.icon {
+    text-decoration: none;
+    color: #d29124;
+    font-family: 'fontawesome';
+}
+
+.copyright .contact a.facebook:before {
+    content: "\f09a";
+}
+
+.copyright .contact a.github:before {
+    content: '\f09b';
+}
+
+.copyright .contact a.twitter:before {
+    content: '\f099';
+}
+
+h6.copyright {
+    text-align: right;
+    size: 0.5em;
+    color: #8c5656;
+}
 
 
+/*End of the navigator*/
 
+.content {
+    float: right;
+    width: 80%;
+    background: #462919;
+}
 
+div#main {
+    /*//background: url('../img/main.jpg');*/
+    opacity: 0.3;
+    margin-top: 10%;
+    /*border-radius: 20px;*/
+}
 
+img#main {
+    width: 50em;
+}
 
-
-
-
-
-
-
+img#main:hover {
+    opacity: 0.6;
+}
 
 
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
 
 /*
  * Hide visually and from screen readers
@@ -122,6 +250,7 @@ textarea {
 .hidden {
     display: none !important;
 }
+
 
 /*
  * Hide only visually, but have it available for screen readers:
@@ -141,8 +270,10 @@ textarea {
     padding: 0;
     position: absolute;
     width: 1px;
-    white-space: nowrap; /* 1 */
+    white-space: nowrap;
+    /* 1 */
 }
+
 
 /*
  * Extends the .visuallyhidden class to allow the element
@@ -161,6 +292,7 @@ textarea {
     white-space: inherit;
 }
 
+
 /*
  * Hide visually and from screen readers, but maintain layout
  */
@@ -168,6 +300,7 @@ textarea {
 .invisible {
     visibility: hidden;
 }
+
 
 /*
  * Clearfix: contain floats
@@ -183,13 +316,16 @@ textarea {
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
 }
 
 .clearfix:after {
     clear: both;
 }
+
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
@@ -202,11 +338,12 @@ textarea {
 }
 
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
+
 
 /* ==========================================================================
    Print styles.
@@ -227,35 +364,30 @@ textarea {
     blockquote:first-line,
     li:first-line {
         background: transparent !important;
-        color: #000 !important; /* Black prints faster:
+        color: #000 !important;
+        /* Black prints faster:
                                    http://www.sanbeiji.com/archives/953 */
         box-shadow: none !important;
         text-shadow: none !important;
     }
-
     a,
     a:visited {
         text-decoration: underline;
     }
-
     a[href]:after {
         content: " (" attr(href) ")";
     }
-
     abbr[title]:after {
         content: " (" attr(title) ")";
     }
-
     /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
         content: "";
     }
-
     pre {
         white-space: pre-wrap !important;
     }
@@ -264,28 +396,23 @@ textarea {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
-
     /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-
     thead {
         display: table-header-group;
     }
-
     tr,
     img {
         page-break-inside: avoid;
     }
-
     p,
     h2,
     h3 {
         orphans: 3;
         widows: 3;
     }
-
     h2,
     h3 {
         page-break-after: avoid;
