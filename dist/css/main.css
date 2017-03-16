@@ -193,6 +193,7 @@ ul.contact.icon {
     text-decoration: none;
     color: #d29124;
     font-family: 'fontawesome';
+    text-shadow: -3px 3px 2px #0e0a03;
 }
 
 .copyright .contact a.facebook:before {
