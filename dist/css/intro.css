@@ -102,6 +102,7 @@ body {
 }
 
 .profilePolaroid {
+        transform: rotate(15deg);
     max-width: 20em;
     height: 20em;
     padding: 1.5em;
@@ -124,6 +125,12 @@ body {
 .lifeExp,
 .interest {
     border: 1px wheat solid;
+    float: left;
+}
+.profile{
+    width: 20em;
+}
+
 }
 
 
