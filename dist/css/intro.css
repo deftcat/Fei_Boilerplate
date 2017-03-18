@@ -124,8 +124,11 @@ body {
 .presonalInfo,
 .lifeExp,
 .interest {
+    /*animation-name: eachCard;*/
+    /*animation-duration: 2s;*/
     border: 1px wheat solid;
-    float: left;
+    float: right;
+    margin: 0 1em 1em;
 }
 
 .profile {
@@ -135,14 +138,49 @@ body {
 .presonalInfo,
 .lifeExp,
 .interest {
-    width: 15em;
-    min-height: 20em;
+    min-width: 15em;
+}
+
+div.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition: 2s;
+}
+
+div.cover:hover {
+    opacity: 0.2;
+    height: 0;
+}
+
+.presonalInfo {
+    margin-top: 10em;
+    margin-right: 5em;
+    transform: rotate(-3deg);
+}
+
+.lifeExp {
+    transform: rotate(-10deg);
+}
+
+.interest {
+    margin-right: 3em;
+    transform: rotate(30deg);
 }
 
 .inner {
     margin: 0 .5em;
     padding: 0em .5em;
     background-color: rgba(128, 128, 128, 0.2);
+}
+
+.interest {
+    clear: both;
 }
 
 
