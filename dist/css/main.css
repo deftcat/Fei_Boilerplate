@@ -147,8 +147,12 @@ li.tab a {
     /*padding: 1em;*/
     text-decoration: none;
     color: #e3f1d5;
+    transition: 2s ease-in-out;
 }
-
+li.tab a:hover{
+    letter-spacing: 0.5em;
+    border-bottom: 1px #e3f1d5 solid;
+}
 li.tab:hover {
     border-radius: 90% 10%;
     background: #821639;
