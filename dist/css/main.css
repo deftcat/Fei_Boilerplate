@@ -101,21 +101,23 @@ textarea {
 
 
 /* ==========================================================================
-   Author's custom styles pixel=1200
+   Author's custom styles pixel=960px
    ========================================================================== */
 
 body, h1,h2,h3,h4,h5,h6 {
     font-weight: lighter;
+    background-color: #222;
+    color:wheat;
     /*font-family: 'Tangerine', cursive;*/
 }
-
 
 /*The navigator bookmark*/
 
 .navigator {
     float: left;
-    width: 20%;
-    background: #382d27;
+    width: 15.6%;/*1/span2*/
+    margin-right: 10px;
+    /*background: #382d27;*/
 }
 
 .navigator h1 {
@@ -130,11 +132,11 @@ body, h1,h2,h3,h4,h5,h6 {
 ul.tab {
     list-style-type: none;
     /*navigator need no bullet*/
-    padding: 6em 1.5em;
+    padding: 2em 1.5em;
 }
 
 li.tab {
-    margin: 1em;
+    margin: 1.5em 1em;
     padding: 0.2em 1em 0.1em 7px;
     width: 4px;
     background: darkolivegreen;
@@ -160,6 +162,7 @@ li.tab:hover {
 
 .copyright {
     margin: 1em;
+    margin-top: 2em;
 }
 
 .copyright .contact li {
@@ -221,28 +224,6 @@ h6.copyright {
 
 
 /*End of the navigator*/
-
-.content {
-    float: right;
-    width: 80%;
-    background: #462919;
-}
-
-div#main {
-    /*//background: url('../img/main.jpg');*/
-    opacity: 0.3;
-    margin-top: 10%;
-    /*border-radius: 20px;*/
-}
-
-img#main {
-    width: 50em;
-}
-
-img#main:hover {
-    opacity: 0.6;
-}
-
 
 /* ==========================================================================
    Helper classes
