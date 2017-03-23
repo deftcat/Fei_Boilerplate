@@ -14,80 +14,50 @@ article {
 }
 
 div.book {
-    /*opacity: 0.3;*/
-    /*margin-top: 5%;*/
     float: right;
-    /*border-radius: 140px 0 0 140px;*/
-    overflow: hidden;
-    /*position: absolute;*/
-    /*top: 0;*/
-    /*right: 0;*/
-    /*width: 600px;*/
+    /*overflow: hidden;*/
     width: 70%;
-    /*width: 41.1%;*/
-    transition: 5s ease-in-out;
+    transition: 3s ease-in-out;
 }
 
-img.book {
-    width: 100%;
+div.book {
+    background-size: cover;
+    opacity: 0.3;
+    width: 58.0%;
     border-radius: 140px 0 0 140px;
-}
-
-
-/*
-img#main:hover {
-    opacity: 0.6;
-}*/
-
-section h1,
-h2,
-h3,
-h4,
-h5 {
-    /*font-weight: 500;*/
+    background-image: url('../img/main.jpg');
+    position: absolute;
+    right: 0;
+    height: 450px;
 }
 
 section {
     margin-top: 7em;
 }
 
-
-/*section h1 {
-    margin: 25%;
-    transition: 1s;
-    border: 1px green solid;
-    position: absolute;
-    top: 0;
-    background: transparent;;
-}*/
-
-
-/*section h1:hover ~ div#main{
-    opacity: 0.9;
-}
-*/
-
-div#book:hover {
-    opacity: 0.7;
-}
-
 div.book h1 {
     position: absolute;
     background: transparent;
-    border: 1px green solid;
     top: 35%;
-    right: 30%;
-    transition: 1s ease-in-out;
+    right: 50%;
+    transition: 2s ease-in-out;
+    text-shadow: 0 0 20px darkred;
+    color: transparent;
 }
 
-div.book h1:hover {
+div.book:hover > h1 {
+    text-shadow: 0 0 0 darkred;
     transform: scale(2);
+}
+
+div.book:hover {
+    opacity: 0.7;
 }
 
 div.book h4 {
     position: absolute;
-    top: 4em;
-    right: 10em;
+    bottom: 400px;
+    right: 15%;
     padding: 1em;
     background: cadetblue;
     transform: rotate(60deg);
@@ -105,9 +75,10 @@ div.book h5 {
 
 div.table article {
     position: absolute;
-    width: 20%;
+    width: 50%;
     letter-spacing: 1px;
-    animation: art 3s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: textFall 3s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    transition: 2s;
 }
 
 div.table h3 {
@@ -118,21 +89,12 @@ div.table h3 {
 div.table h2 {
     letter-spacing: 1px;
     border-bottom: 1px wheat solid;
-    animation: art 3s cubic-bezier(0.455, 0.030, 0.515, 0.955) 0.5s;
-    /*animation: art_btn 6s cubic-bezier(0.455, 0.030, 0.515, 0.955) 1.5s;*/
+    animation: textFall 3s cubic-bezier(0.455, 0.030, 0.515, 0.955) 0.5s;
 }
 
-@keyframes art {
+@keyframes textFall {
     0% {
-        /*letter-spacing: 0px;*/
         transform: translateY(-20em);
         opacity: 0.2;
     }
 }
-
-
-/*@keyframes art_btn{
-    from{
-        border-bottom: 0px wheat solid ;
-    }
-}*/
