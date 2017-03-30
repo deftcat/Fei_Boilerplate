@@ -1,0 +1,121 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+        .line {
+        position: relative;
+        width: 1px;
+        height: 250px;
+        background-color: wheat;
+        top: 0;
+        left: 50%;
+        z-index: 5;
+        animation: hanging 1s ease-in-out infinite alternate;
+    }
+    
+    .line:after {
+        content: '';
+        position: absolute;
+        top: 220px;
+        left: -7px;
+        width: 5px;
+        height: 20px;
+        border-bottom: 15px wheat solid;
+        border-right: 5px transparent solid;
+        border-left: 5px transparent solid;
+        z-index: 5;
+    }
+    
+    .light {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        /*background-color: white;*/
+        border-radius: 50%;
+        z-index: 4;
+        left: -25px;
+        /*should be half of it's width*/
+        top: 254px;
+        z-index: 4;
+        box-shadow: 0 0 15px 10px white;
+        opacity: 0.3;
+    }
+    
+    .light:hover {
+        opacity: 0.7;
+        background-color: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 0 15px 20px white;
+    }
+    
+    .light:hover ~ p {
+        opacity: 0.7;
+    }
+    
+    p {
+        position: fixed;
+        top: 250px;
+        left: -8px;
+        z-index: 3;
+        opacity: 0;
+    }
+    
+    @keyframes hanging {
+        0% {
+            transform: translateX(-10px) rotate(5deg);
+        }
+        100% {
+            transform: translateX(10px) rotate(-5deg);
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+    <!-- Add your site or application content here -->
+    <section>
+        <div class="bulb">
+            <div class="line">
+                <div class="light"></div>
+                <p>滴</p>
+            </div>
+        </div>
+        <article>
+            use html to draw the bulb div basic position involved css use animation alternate for the animation
+            <blockquote>http://codepen.io/Simentesempre/pen/raoERY</blockquote>
+        </article>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script>
+    window.jQuery || document.write('<script src="../js/vendor/jquery-3.1.1.min.js"><\/script>')
+    </script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
+    <script type="text/javascript">
+    </script>
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+    window.ga = function() {
+        ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</body>
+
+</html>
