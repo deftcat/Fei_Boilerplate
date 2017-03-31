@@ -1,0 +1,27 @@
+div.content {
+    background-color: white;
+    width: 550px;
+    height: 550px;
+    margin-top: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.content img {
+    object-fit: cover;
+    width: inherit;
+    height: inherit;
+}
+
+article.content {
+    background-color: rgba(204, 204, 204, 0.7);
+    position: absolute;
+    right: 0;
+    top:5px;
+    color: black;
+    /*display: none;*/
+    width: 50%;
+}
+div.content:hover  article.content{
+	display: block;
+}
