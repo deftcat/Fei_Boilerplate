@@ -1,9 +1,4 @@
 {
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  },
   "devDependencies": {
     "@alrra/travis-scripts": "^3.0.1",
     "apache-server-configs": "2.14.0",
@@ -31,7 +26,8 @@
     "travis-after-all": "^1.4.4"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4",
+    "npm": ">=3"
   },
   "babel": {
     "presets": [
