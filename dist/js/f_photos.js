@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var Acctoken = 'EAACEdEose0cBABVPM6qD3uQ8KbnEewIf9LS4APzQRxtoXDUZB6vOTzWYo4cwr7YBPIapMLyFiUfT3csUrv8xWUs7wEJqczQSnM3MdVwKJFuujmedebKyQvdnust9QZCnKmxUqMwx3wcx06MCtWXHibbAiPuXN5htQk5OxAhRD1G3kdIKzdAcZC7PmIDsuAZD';
+    var Acctoken = 'EAACEdEose0cBALYQnuHZAvXQGryDoEH1FC9J3CRjpnCVWOXQlSO8QQl1vXAvIXySze6O1do1FrsM8yC37zNXaZAq1VD99ZAYHtHK14aVq7H0jleG4AnMdZAsMeVYyy0y8OqHLvMH6Sw7h57kwoazTNqzFsvfVP4gAIrj2tmydsHtStv7OWGZAn7fcrg7oWt8ZD';
     var fb_photos_url = 'https://graph.facebook.com/v2.1/me?';
     var fields = 'albums{photos{images,name,likes}}';
     var galleryIDs = ['#img'];
@@ -46,17 +46,18 @@ $(document).ready(function() {
         // $('#img2').hide();
     $('button.next').on('click', function() {
         $(galleryIDs[curID++]).toggle('drop', { direction: 'left' }, 500, function() {
+            console.log(curID);
             $(galleryIDs[curID]).toggle('drop', { direction: 'right' }, 500);
         });
         curID %= galleryIDs.length;
+        console.log(curID);
     });
     $('button.prev').on('click', function(callback) {
-        $("#img").toggle('drop', { direction: 'left' }, 500, function() {
-            $("#img2").toggle('drop', { direction: 'right' }, 500, function() {
-                console.log("IM2");
-
-            });
+        $(galleryIDs[curID--]).toggle('drop', { direction: 'right' }, 500, function() {
+            curID = (curID<0?curID+galleryIDs.length:curID);
+            $(galleryIDs[curID]).toggle('drop', { direction: 'left' }, 500);
         });
+        curID %= galleryIDs.length;
     });
 
 });

@@ -1,13 +1,22 @@
+.content {
+    margin: 50px;
+    position: absolute;
+    top: 0;
+    height: 550px;
+}
+
 div.content {
     background-color: white;
-    width: 550px;
-    height: 550px;
-    margin-top: 100px;
+    width: 700px;
     overflow: hidden;
-    position: relative;
+    -webkit-transition: -webkit-transform 1s ease-in-out;
+    transition: -webkit-transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
 }
 
 .content img {
+    -o-object-fit: cover;
     object-fit: cover;
     width: inherit;
     height: inherit;
@@ -17,11 +26,25 @@ article.content {
     background-color: rgba(204, 204, 204, 0.7);
     position: absolute;
     right: 0;
-    top:5px;
+    top: 5px;
     color: black;
-    /*display: none;*/
+    opacity: 0;
     width: 50%;
+    height: 400px;
+    margin-right: 0px;
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
 }
-div.content:hover  article.content{
-	display: block;
+
+div.content:hover article.content {
+    opacity: 1;
+}
+
+button.next {
+    z-index: 2;
+}
+
+button.prev {
+    left: 653px;
+    z-index: 2;
 }
