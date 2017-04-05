@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var fb_url = 'https://graph.facebook.com/v2.1/me';
-    var access_token = 'EAACEdEose0cBAEC85lZB5rm3bkeXLPvdy5ZATZBAtowidM3HC7XphncUIZCZCqqK7yNPtZBjZCaQI0n3qxNheo9ydJrM8WSNWaUrDGp7k20DknLBGzjvNEbTXHmCHV12TIC5ZBGk8orQiMlkOIlHoGm3TJVzQ8JmZADBiYwt4bN3m7ycYKsFBiVa9bOsH2lZCtIZCwZD';
+    var access_token = 'EAACEdEose0cBABX0MLuNqgEZA72vIOdlgFCXD4lR4UpbD3DaXgZB4YAkJwVLcQj7TqIMQ2MTLNrYhkOIgbhVYZCEGAhi7HulVhn1xQYOkJlhaZA8NeZBRgmfvQx4FdUQwaQ3tMAPwkRdM562MVPypuWx7lYbUUCI2NRwc9orGFIp5hAdndrXZAZAhP6vs4cZAZAkZD';
     var fields = 'albums{photos{images,name,likes}}';
     $.ajax({
             url: fb_url,
@@ -17,6 +17,8 @@ $(document).ready(function() {
                     gallery(response.albums.data[index].photos.data);
                 }
             }
+            // after finish the get_url then call the plugin
+            $('ul').jSlider();
         })
         .fail(function() {
             console.log($(this).url + "error");
@@ -43,12 +45,48 @@ $(document).ready(function() {
         var defaults = {
             speed: 3000,
             pause: 2000,
-            transition: 'slider'
+            transition: 'slide'
         };
-        $(this).each(function(index, el) {
-        	console.log(el);
+        //for each element call the slide (eg. ul)
+        this.each(function(el) {
+            $(this).wrap('<div class="slider-wrapper"></div>');
+            $(this).css({
+                width: '9999990px',
+                position: 'relative',
+                padding: 0
+            });
+            $(this).children().css({
+                float: 'left',
+                width: '550px',
+                listStyle:'none'
+
+            });
+
+            $('.slider-wrapper').css({
+                width: '550px',
+                height: '300px',
+                // overflow: 'hidden'
+            });
+
+            function slide() {
+                setInterval(function() {
+                    console.log($(this));
+                    $(this)
+                    .animate({left: '-' + $(this).parent().width()},
+                        defaults.speed,
+                        function() {
+                            /* stuff to do after animation is complete */
+                            $(this).css('left', '0')
+                            .children(':first')
+                            .appendTo($(this))
+
+                        });
+                }, defaults.pause);
+            }
+            // slide();
+            // console.log(el);
         });
     }
-    $('ul').jSlider();
+
 
 });
