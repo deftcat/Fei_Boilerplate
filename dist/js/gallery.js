@@ -1,12 +1,15 @@
 $(document).ready(function() {
     var fb_url = 'https://graph.facebook.com/v2.1/me';
-    var access_token = 'EAACEdEose0cBABX0MLuNqgEZA72vIOdlgFCXD4lR4UpbD3DaXgZB4YAkJwVLcQj7TqIMQ2MTLNrYhkOIgbhVYZCEGAhi7HulVhn1xQYOkJlhaZA8NeZBRgmfvQx4FdUQwaQ3tMAPwkRdM562MVPypuWx7lYbUUCI2NRwc9orGFIp5hAdndrXZAZAhP6vs4cZAZAkZD';
+    var access_token = 'EAACEdEose0cBAPZAt1ax1c6kBY25fe6YemkWTgVWKf6VZCdbR3wTYanoVZCGEn9qyWXpWoSFZBtW5lBkwJ7sAHcz4oVpgheV9N58Yee2k1XO5YtV0YNd34HbLKv0EmDqntZAT9VZBr5oAuOStN4kVj4HhFDmOltY4cZAoxVNe6sIVY4xPESWFPIc8vGZAQPHD14ZD';
     var fields = 'albums{photos{images,name,likes}}';
     $.ajax({
             url: fb_url,
             type: 'GET',
             dataType: 'json',
             data: { access_token: access_token, fields: fields },
+            beforeSend: function() {
+                $('ul').prepend('<li>').children().first().attr('id', 'loading');;
+            }
         })
         .done(function(response) {
             console.log("success");
@@ -20,17 +23,17 @@ $(document).ready(function() {
             // after finish the get_url then call the plugin
             $('ul').jSlider();
         })
-        .fail(function() {
-            console.log($(this).url + "error");
+        .fail(function(response) {
+            console.log(response.error.message + "error");
         })
         .always(function() {
+            $('ul').children().remove('#loading'); //.find('id="loading"')
             console.log("complete");
         });
 
     var gallery = function(photos) {
         for (index in photos) {
             var id = photos[index].id;
-            // galleryIDs.push('#' + id);
             var src = photos[index].images[0].source;
             var name = photos[index].name;
             var tag_img = '<img src="' + src + '" alt="' + src + '" />';
@@ -40,54 +43,50 @@ $(document).ready(function() {
     }
 
     $.fn.jSlider = function() {
-        console.log('call slider');
-
         var defaults = {
             speed: 3000,
             pause: 2000,
             transition: 'slide'
         };
-
+        var $holder = $(this);
         //for each element call the slide (eg. ul)
-        $(this).each(function() {
-            console.log($(this));
-            console.log(this);
-            $(this).wrap('<div class="slider-wrapper"></div>');
-            $(this).css({
+        $holder.each(function() {
+            $holder.wrap('<div class="slider-wrapper"></div>');
+            $holder.css({
                 width: '9999990px',
                 position: 'relative',
-                padding: 0
+                padding: 0,
+                height: 'inherit',
             });
-            $(this).children().css({
+            $holder.children().css({
                 float: 'left',
-                width: '550px',
-                listStyle: 'none'
-
+                width: '700px',
+                listStyle: 'none',
+                height: 'inherit',
             });
 
             $('.slider-wrapper').css({
-                width: '550px',
-                height: '300px',
-                overflow: 'hidden'
+                width: '700px',
+                height: '550px',
+                margin: '0 auto',
+                overflow: 'hidden',
             });
-            slide($(this));
 
-            function slide(holder) {
+            slide();
+
+            function slide() {
                 setInterval(function() {
-                    holder
-                        .animate({ left: '-' + holder.parent().width() },
+                    $holder
+                        .animate({ left: '-' + $holder.parent().width() },
                             defaults.speed,
                             function() {
-                                /* stuff to do after animation is complete */
-                                holder.css('left', '0')
+                                $holder.css('left', '0')
                                     .children(':first')
-                                    .appendTo(holder)
+                                    .appendTo($holder)
 
                             });
                 }, defaults.pause);
             }
-
-            // console.log(el);
         });
     }
 
