@@ -47,8 +47,11 @@ $(document).ready(function() {
             pause: 2000,
             transition: 'slide'
         };
+
         //for each element call the slide (eg. ul)
-        this.each(function(el) {
+        $(this).each(function() {
+            console.log($(this));
+            console.log(this);
             $(this).wrap('<div class="slider-wrapper"></div>');
             $(this).css({
                 width: '9999990px',
@@ -58,32 +61,32 @@ $(document).ready(function() {
             $(this).children().css({
                 float: 'left',
                 width: '550px',
-                listStyle:'none'
+                listStyle: 'none'
 
             });
 
             $('.slider-wrapper').css({
                 width: '550px',
                 height: '300px',
-                // overflow: 'hidden'
+                overflow: 'hidden'
             });
+            slide($(this));
 
-            function slide() {
+            function slide(holder) {
                 setInterval(function() {
-                    console.log($(this));
-                    $(this)
-                    .animate({left: '-' + $(this).parent().width()},
-                        defaults.speed,
-                        function() {
-                            /* stuff to do after animation is complete */
-                            $(this).css('left', '0')
-                            .children(':first')
-                            .appendTo($(this))
+                    holder
+                        .animate({ left: '-' + holder.parent().width() },
+                            defaults.speed,
+                            function() {
+                                /* stuff to do after animation is complete */
+                                holder.css('left', '0')
+                                    .children(':first')
+                                    .appendTo(holder)
 
-                        });
+                            });
                 }, defaults.pause);
             }
-            // slide();
+
             // console.log(el);
         });
     }
