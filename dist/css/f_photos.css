@@ -1,18 +1,22 @@
 .content {
-    margin: 50px;
     position: absolute;
     top: 0;
     height: 550px;
 }
 
 div.content {
-    background-color: white;
+    background-color: transparent;
     width: 700px;
     overflow: hidden;
     -webkit-transition: -webkit-transform 1s ease-in-out;
     transition: -webkit-transform 1s ease-in-out;
     transition: transform 1s ease-in-out;
     transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+}
+
+div.wrapping {
+    margin: 50px;
+    overflow: hidden;
 }
 
 .content img {
@@ -23,6 +27,7 @@ div.content {
 }
 
 article.content {
+    margin: 50px;
     background-color: rgba(204, 204, 204, 0.7);
     position: absolute;
     right: 0;
@@ -40,11 +45,21 @@ div.content:hover article.content {
     opacity: 1;
 }
 
-button.next {
+button {
+    box-shadow: 0px 2px 8px 5px rgba(134, 88, 179, 0.39);
+    margin: 0;
+    position: absolute;
     z-index: 2;
+    border: 0;
+}
+
+button.next {
+    margin-left: 5px;
+    background: linear-gradient(180deg, #f6f8ff, #a787d0);
 }
 
 button.prev {
-    left: 653px;
-    z-index: 2;
+    margin-right: 5px;
+    background: linear-gradient(180deg, #a787d0, #f6f8ff);
+    right: 0;
 }

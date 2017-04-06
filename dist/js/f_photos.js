@@ -11,9 +11,6 @@ $(document).ready(function() {
             dataType: 'json',
             data: { access_token: Acctoken, fields, fields },
         })
-        // .beforeSend(function(){
-        // 	$('section').html(>'')
-        // }),
         .done(function(response) {
             console.log("success");
             //find 'Life is a story' album
@@ -45,17 +42,24 @@ $(document).ready(function() {
         }
         // $('#img2').hide();
     $('button.next').on('click', function() {
+
+        $('button').hide('slow');
         $(galleryIDs[curID++]).toggle('drop', { direction: 'left' }, 500, function() {
             console.log(curID);
-            $(galleryIDs[curID]).toggle('drop', { direction: 'right' }, 500);
+            $(galleryIDs[curID]).toggle('drop', { direction: 'right' }, 500, function() {
+                $('button').show('slow');
+            });
         });
         curID %= galleryIDs.length;
         console.log(curID);
     });
-    $('button.prev').on('click', function(callback) {
+    $('button.prev').on('click', function() {
+        $('button').hide('slow');
         $(galleryIDs[curID--]).toggle('drop', { direction: 'right' }, 500, function() {
-            curID = (curID<0?curID+galleryIDs.length:curID);
-            $(galleryIDs[curID]).toggle('drop', { direction: 'left' }, 500);
+            curID = (curID < 0 ? curID + galleryIDs.length : curID);
+            $(galleryIDs[curID]).toggle('drop', { direction: 'left' }, 500, function() {
+                $('button').show('slow');
+            });
         });
         curID %= galleryIDs.length;
     });
