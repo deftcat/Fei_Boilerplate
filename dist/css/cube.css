@@ -1,0 +1,96 @@
+.camera {
+    width: 400px;
+    height: 400px;
+    -webkit-perspective-origin: center center;
+    perspective-origin: center center;
+    -webkit-perspective: 400px;
+    perspective: 400px;
+    /*deep*/
+    margin: 0 auto;
+}
+
+.space {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -moz-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    border: 1px white dashed;
+    transform: translateZ(-200px);
+    /*to push back the entire, so the font box will get the right position*/
+    transition: transform 1s;
+}
+
+div {
+    margin: 20px auto;
+    width: 400px;
+}
+
+div[class^='box'] {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    opacity: 0.8;
+}
+
+div.box1 {
+    background-color: rgba(9, 243, 222, 0.5);
+    transform: rotateX(0deg) translateZ(200px);
+    background-image: url(../designs/cube_Logo08.jpg);
+}
+
+div.box2 {
+    background-color: rgba(213, 220, 111, 0.5);
+    transform: rotateY(180deg) translateZ(200px);
+    background-image: url('../designs/cube_glass.jpg');
+}
+
+div.box3 {
+    background-color: rgba(123, 456, 111, 0.5);
+    transform: rotateY(90deg) translateZ(200px);
+    background-image: url('../designs/cube_flower.jpg');
+}
+
+div.box4 {
+    background-color: rgba(213, 666, 444, 0.5);
+    transform: rotateY(-90deg) translateZ(200px);
+    background-image: url('../designs/cube_bubble.jpg');
+}
+
+div.box5 {
+    background-color: rgba(555, 923, 123, 0.5);
+    transform: rotateX(90deg) translateZ(200px);
+    background-image: url('../designs/cube_icon31.jpg');
+}
+
+div.box6 {
+    background-color: rgba(342, 523, 222, 0.5);
+    transform: rotateX(-90deg) translateZ(200px);
+    background-image: url('../designs/cube_ice.jpg');
+}
+
+.showTop {
+    transform: translateZ(-200px) rotateX(-90deg);
+}
+
+.showBtn {
+    transform: translateZ(-200px) rotateX(90deg);
+}
+
+.showLef {
+    transform: translateZ(-200px) rotateY(90deg);
+}
+
+.showRig {
+    transform: translateZ(-200px) rotateY(-90deg);
+}
+
+.showBac {
+    transform: translateZ(-200px) rotateY(-180deg);
+}
+
+.showFon {
+    transform: translateZ(-200px) rotateX(0deg);
+}
