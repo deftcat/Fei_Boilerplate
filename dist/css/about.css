@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Author's custom styles
+   960px = 12 grid = 80px * 12 = (60 + 10 + 10) 
+   ========================================================================== */
+
+section {
+    width: 640px;
+    /*2span8 = 80px * 8 = 640px*/
+    margin: 0 auto;
+    border: 1px white solid;
+    /*	display: table;*/
+    /*for show the border*/
+}
+
+article {
+    margin: 10px;
+    float: left;
+    /*border: 1px white solid;*/
+    width: 100%;
+}
+
+.profilePolaroid {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+    max-width: 20em;
+    height: 20em;
+    padding: 1.5em;
+    background-color: #dcd0ca;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 20px white, inset 0px 1px 5px rgba(33, 30, 30, 0.76);
+}
+
+.profilePic {
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/profile.jpg");
+    background-size: cover;
+    box-shadow: 0 0 4px 3px rgba(162, 157, 157, 0.54), inset 0 0 20px 3px rgba(0, 0, 0, 0.19);
+}
+
+.profile {
+    width: 20em;
+    width: 300px;
+    /*2span4 = 80*4 - 20 = 300px*/
+}
+
+article.personalInfo {
+    width: 300px;
+    height: 20em;
+}
+
+
+/*navigator */
+
+nav {
+    margin: 0 auto;
+    width: 640px;
+    /*-webkit-padding-start: 0px;*/
+    /*2 span 8 = 80*8 = 640px*/
+}
+
+nav a {
+    font-size: 1.5em;
+    color: wheat;
+}
+
+nav li {
+    display: inline-block;
+    border-right: 1px white solid;
+    margin-left: -4px;
+    padding: 1px 5px;
+    width: 130px;
+    /*640/4 = 160, 160- 20*/
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    height: 40px;
+    background-color: #4e4071;
+}
+
+nav > ul {
+    text-align: right;
+    padding-left: 0px;
+    background-color: #4e4071;
+}
+
+li > ul {
+    /*sub list*/
+    position: absolute;
+    right: -1px;
+}
+
+li > ul > li:first-child {
+    /*for sub list first child*/
+    margin-top: 5px;
+}
