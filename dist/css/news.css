@@ -1,0 +1,218 @@
+/* ==========================================================================
+   Author's custom styles pixel=960px
+   ========================================================================== */
+
+div.content {
+    float: right;
+    width: 82.3%;
+    margin-left: 10px;
+    /*background: #462919;*/
+}
+
+article {
+    float: left;
+}
+
+div.book {
+    float: right;
+    /*overflow: hidden;*/
+    width: 70%;
+    transition: 3s ease-in-out;
+}
+
+div.book {
+    background-size: cover;
+    opacity: 0.3;
+    width: 58.0%;
+    border-radius: 140px 0 0 140px;
+    background-image: url('../img/main.jpg');
+    position: absolute;
+    right: 0;
+    height: 450px;
+}
+
+section {
+    margin-top: 7em;
+}
+
+div.book h1 {
+    position: absolute;
+    background: transparent;
+    top: 35%;
+    right: 50%;
+    transition: 2s ease-in-out;
+    text-shadow: 0 0 20px darkred;
+    color: transparent;
+}
+
+div.book:hover > h1 {
+    text-shadow: 0 0 0 darkred;
+    transform: scale(2);
+}
+
+div.book:hover {
+    opacity: 0.7;
+}
+
+div.book h4 {
+    position: absolute;
+    bottom: 400px;
+    right: 15%;
+    padding: 1em;
+    background: cadetblue;
+    transform: rotate(60deg);
+    box-shadow: 5px 8px 20px 0px rgba(123, 109, 109, 0.55);
+}
+
+div.book h5 {
+    position: absolute;
+    right: 0;
+    margin: 1em;
+    top: 25em;
+    background: rgba(95, 158, 160, 0.62);
+    padding: 3px;
+}
+
+div.table article {
+    position: absolute;
+    width: 50%;
+    letter-spacing: 1px;
+    animation: textFall 3s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    transition: 2s;
+}
+
+div.table h3 {
+    line-height: 2em;
+    text-indent: 1em;
+}
+
+div.table h2 {
+    letter-spacing: 1px;
+    border-bottom: 1px wheat solid;
+    animation: textFall 3s cubic-bezier(0.455, 0.030, 0.515, 0.955) 0.5s;
+}
+
+@keyframes textFall {
+    0% {
+        transform: translateY(-20em);
+        opacity: 0.2;
+    }
+}
+
+
+/*The navigator bookmark*/
+
+.navigator {
+    float: left;
+    width: 15.6%;
+    /*1/span2*/
+    margin-right: 10px;
+    /*background: #382d27;*/
+}
+
+.navigator h1 {
+    text-align: center;
+    color: wheat;
+}
+
+.tab {
+    display: block;
+}
+
+ul.tab {
+    list-style-type: none;
+    /*navigator need no bullet*/
+    padding: 2em 1.5em;
+}
+
+li.tab {
+    margin: 1.5em 1em;
+    padding: 0.2em 1em 0.1em 7px;
+    width: 4px;
+    background: darkolivegreen;
+    box-shadow: -4px 4px 10px 0px rgba(150, 4, 4, 0.62);
+    border-radius: 10% 90%;
+    transition: 1s;
+}
+
+li.tab a {
+    /*padding: 1em;*/
+    text-decoration: none;
+    color: #e3f1d5;
+    transition: 2s ease-in-out;
+}
+
+li.tab a:hover {
+    letter-spacing: 0.5em;
+    border-bottom: 1px #e3f1d5 solid;
+}
+
+li.tab:hover {
+    border-radius: 90% 10%;
+    background: #821639;
+}
+
+.copyright {
+    margin: 1em;
+    margin-top: 2em;
+}
+
+.copyright .contact li {
+    display: inline-block;
+    border: 1px #5a4b4b solid;
+    text-align: center;
+    size: 1px 1px;
+    width: 1.5em;
+    height: 1.5em;
+    list-style-type: none;
+    transition: 1s;
+}
+
+ul.contact.icon {
+    margin: inherit;
+    padding-left: inherit;
+}
+
+.copyright .contact li {
+    display: inline-block;
+    border: 1px #5a4b4b solid;
+    text-align: center;
+    size: 1px 1px;
+    width: 1.5em;
+    height: 1.5em;
+    list-style-type: none;
+    transform: 1.5s;
+}
+
+.copyright .contact li:hover {
+    border-color: transparent;
+    box-shadow: 0px 0px 2px 2px rgb(80, 48, 48);
+}
+
+.copyright .contact a.icon {
+    text-decoration: none;
+    color: #d29124;
+    font-family: 'fontawesome';
+    text-shadow: -3px 3px 2px #0e0a03;
+}
+
+.copyright .contact a.facebook:before {
+    content: "\f09a";
+}
+
+.copyright .contact a.github:before {
+    content: '\f09b';
+}
+
+.copyright .contact a.twitter:before {
+    content: '\f099';
+}
+
+h6.copyright {
+    text-align: right;
+    size: 0.5em;
+    color: #8c5656;
+}
+
+
+/*End of the navigator*/
