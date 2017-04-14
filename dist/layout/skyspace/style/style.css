@@ -1,0 +1,221 @@
+/*@font-face{
+	font-family: 'Risque', cursive;
+	src:url('https://fonts.googleapis.com/css?family=Risque');
+}*/
+body {
+    background-image: url('../img/bgimg.jpg');
+}
+h1{
+	font-size: 30pt;
+	line-height: 22px;
+}
+.container {
+    margin: 0 auto;
+    width: 890px;
+    height: 1000px;
+}
+/*header = 890px*/
+/*logo= 300px , nav = 590px*/
+nav {
+    height: auto;
+    margin: 0px 0px 20px 300px;
+    width: 530px;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+    font-size: 1.5em;
+}
+div.logo img{
+	width: inherit;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 74px 15px;
+    font-family:'Gloria Hallelujah', cursive; 
+}
+
+nav li.active {
+    background-image: url("../img/linkbg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 74px 30px;
+}
+
+nav li.active a {
+    color: white;
+}
+
+header div.logo {
+    float: left;
+    /*height: 60px;*/
+    width: 300px;
+        margin: 40px auto;
+}
+
+header div.headerDivider {
+    background-image: url('../img/articleDivider.jpg');
+    background-repeat: repeat-x;
+    height: 2px;
+    width: 890px;
+    margin-bottom: 20px;
+}
+
+aside {
+    width: 250px;
+    float: right;
+    padding: 25px 0;
+}
+
+aside div.textArea {
+    background-color: #2C7C88;
+    border: 1px solid #116678;
+    padding: 25px 0;
+}
+
+div.siderDivider {
+    background-image: url('../img/siderDivider.jpg');
+    /*background-repeat: repeat-x;*/
+    margin: 10px 25px 10px auto;
+    width: 200px;
+    height: 2px;
+}
+
+aside div#recentPost,
+aside div#latestComment {
+    margin: auto auto 10px 25px;
+    width: 200px;
+    word-wrap: break-word;
+}
+
+aside a,
+aside h2 {
+    color: white;
+    display: block;
+    text-decoration: none;
+}
+aside li{
+	margin: 10px auto;
+	color: white;
+}
+
+aside a {
+    line-height: 20px;
+    list-style: none;
+}
+
+aside #searchForm {
+    border-radius: 10px;
+    border: 0px;
+    background-color: white;
+    margin-left: 25px;
+    padding: 2px 6px;
+}
+
+#latestComment a:before {
+    content: '\"'
+}
+
+#latestComment a:after {
+    content: ' ...'
+}
+
+.ad {
+    margin: 20px 10px;
+}
+
+.ad div {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    float: left;
+    margin: auto 10px 10px auto;
+}
+
+section {
+    float: left;
+    width: 500px;
+}
+
+article {
+    width: 500px;
+    margin: 10px 20px;
+}
+article img{
+	border: 2px black solid;
+}
+div.articleDivider {
+    background-image: url('../img/articleDivider.jpg');
+    height: 2px;
+    margin: 16px auto 20px auto;
+}
+
+article div.essay {
+    padding-left: 100px;
+    width: 500px;
+    margin-top: -154px;
+}
+
+article div.date {
+    padding-left: 10px;
+    width: 100px;
+    float: left;
+    color: white;
+}
+
+article div.datetext {
+    margin: 0 auto;
+    padding:5px;
+}
+article p{
+	font-size: 1em;
+}
+article div.dateimg {
+    background-image: url('../img/dateimg.jpg');
+    height: 123px;
+    width: 100px;
+    background-repeat: no-repeat;
+    padding:5px;
+}
+div.dateText h2, div.dateText h3{
+	text-align: center;
+	color: white;
+	line-height: 10px;
+	font-family:'Gloria Hallelujah', cursive; 
+}
+div.footerWedge{
+	width: 100%;
+	height: 240px;
+	clear: both;
+	background-color: #2C7C88;
+	margin : 0 auto;
+}
+div.footerWedge div.footerW{
+	width: 270px;
+	float: left;
+	padding: 10px 40px;
+	margin: 0 auto;
+	word-break: break-all; 
+}
+div.footer div.footerDivider{
+	height:220px;
+	width: 2px;
+	margin: 10px 2px;
+	background-image: url('../img/siderDivider.jpg');
+}
+footer {
+	background-color: black;
+	color: white;
+	height: 50px;
+}
+footer #copyright{
+	position: absolute;
+	right: 10px;
+}
+footer p{
+	margin: 0;
+	padding: 10px;
+}
