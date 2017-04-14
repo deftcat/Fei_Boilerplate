@@ -52,9 +52,8 @@ article.personalInfo li {
     line-height: 50px;
 }
 
-ul.personalInfo  li {
-    
-}
+ul.personalInfo li {}
+
 a.icon {
     border-radius: 100%;
     display: inline-block;
@@ -121,13 +120,16 @@ a.icon.email:before {
     top: -3px;
     left: 9px;
 }
-a.icon  span{
-    transform: translateY(-20px)  rotateX(90deg);
-    transition: 1s ease-in-out ;
+
+a.icon span {
+    transform: translateY(-20px) rotateX(90deg);
+    transition: 1s ease-in-out;
 }
-a.icon:hover > span{
-transform: translateY(0px)  rotateX(0deg);
+
+a.icon:hover > span {
+    transform: translateY(0px) rotateX(0deg);
 }
+
 
 /*navigator */
 
@@ -143,33 +145,55 @@ nav a {
     color: wheat;
 }
 
-nav li {
-    display: inline-block;
-    border-right: 1px white solid;
-    margin-left: -4px;
-    padding: 1px 5px;
-    width: 130px;
-    /*640/4 = 160, 160- 20*/
-    box-sizing: border-box;
-    position: relative;
-    top: 0;
-    height: 40px;
-    background-color: #4e4071;
-}
-
 nav > ul {
     text-align: right;
     padding-left: 0px;
     background-color: #4e4071;
 }
 
-li > ul {
-    /*sub list*/
-    position: absolute;
-    right: -1px;
+nav li {
+    list-style-type: none;
 }
 
-li > ul > li:first-child {
-    /*for sub list first child*/
-    margin-top: 5px;
+nav > ul > li {
+    /*first layer*/
+    display: inline-block;
+    border-right: 1px white solid;
+    padding: 5px 5px;
+    /*640 /4 = 160px || prevent so define 20% of 640px*/
+    width: 20%;
+    box-sizing: border-box;
+    position: relative;
+    /*top: 0;*/
+    /*height: 40px;*/
+    background-color: #4e4071;
+    transition: 5s ease;
+}
+
+
+/*---sub list*/
+
+li > ul {
+    position: absolute;
+    right: -1px;
+    background-color: #4e4071;
+    box-sizing: border-box;
+    border-right: 1px white solid;
+    transition: 5s ease-out;
+    overflow: hidden;
+    max-height: 0px;
+    padding-top: 5px;
+}
+
+nav > ul > li> ul > li {
+    display: block;
+    padding: 5px;
+}
+
+
+/*---sublist display*/
+
+li:hover ul {
+    /*remember to set the max-height a NUMBER*/
+    max-height: 600px;
 }
