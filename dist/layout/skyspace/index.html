@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="style/style.css">
     <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
     <!-- link to font -->
-<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 </head>
 
 <body>
@@ -120,7 +120,7 @@
             </article>
         </section>
     </div>
-    <div class ="footerWedge">
+    <div class="footerWedge">
         <div class="footerW">
             <h2>Lorem ipsum</h2>
             <p>dolor sit amet, con sectetur adi piscing elit. Sed id adfd de erwer rcu mi. Nam placerat egestas fri ngilla. Proin turpis turpis, conse ctetur elementum nisi sit amet, tincidunt semper tellus. Phasel lus mattis metus odio, id posuer e libero tempor sit amet. N maximus, massa ut ullamcorper</p>
@@ -160,6 +160,21 @@
     ga('send', 'pageview')
     </script>
     <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('input[type="text"]').on('blur', function(event) {
+            event.preventDefault();
+            /* Act on the event */
+            console.log($(this).attr('value'));
+            if ($(this)[0].value === '') $(this)[0].value = $(this)[0].defaultValue;
+        }).on('focus', function(event) {
+            event.preventDefault();
+            /* Act on the event */
+            if ($(this)[0].defaultValue === $(this)[0].value) $(this)[0].value = '';
+            console.log($(this));
+        });
+    });
+    </script>
 </body>
 
 </html>
