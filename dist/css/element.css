@@ -1,1 +1,69 @@
+article {
+    width: 800px;
+    height: 400px;
+    background-color: #25546f;
+    /*2span10 = 80px * 10  = 800px*/
+    margin: 0 auto;
+    /*for show the border*/
+    /*border: 1px white solid;*/
+    /*  display: table;*/
+}
 
+article > div {
+    margin: 10px;
+    /*direct 2 div in section*/
+    border: 0px;
+    float: left;
+    /*position: relative;*/
+    width: 380px;
+    height: 380px;
+    background-color: gray;
+}
+
+figure {
+    width: inherit;
+    height: inherit;
+    position: relative;
+    margin: 0px;
+}
+
+figure img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+}
+
+figure figcaption {
+    position: absolute;
+    top: 0;
+    -webkit-transition: 1s ease-out;
+    transition: 1s ease-out;
+}
+
+figure a {
+    color: wheat;
+    text-decoration: none;
+}
+
+div.description > h3,
+div.description > p,
+figcaption {
+    padding-left: 40px;
+}
+
+div.description blockquote {
+    word-wrap: break-word;
+}
+
+div.description > h3:first-child {
+    margin-top: 0px;
+}
+
+div.snapshot:hover figcaption {
+    top: 50%;
+    -webkit-transform: scale(2);
+    transform: scale(2);
+}
