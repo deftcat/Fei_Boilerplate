@@ -104,126 +104,87 @@ textarea {
    Author's custom styles pixel=960px
    ========================================================================== */
 
-body, h1,h2,h3,h4,h5,h6 {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: lighter;
     background-color: #222;
-    color:wheat;
+    color: wheat;
     /*font-family: 'Tangerine', cursive;*/
 }
 
-/*The navigator bookmark*/
 
-.navigator {
-    float: left;
-    width: 15.6%;/*1/span2*/
-    margin-right: 10px;
-    /*background: #382d27;*/
+/*navigator */
+
+nav {
+    margin: 0 auto;
+    width: 640px;
+    /*-webkit-padding-start: 0px;*/
+    /*2 span 8 = 80*8 = 640px*/
 }
 
-.navigator h1 {
-    text-align: center;
+nav a {
+    font-size: 1.5em;
     color: wheat;
 }
 
-.tab {
-    display: block;
-}
-
-ul.tab {
-    list-style-type: none;
-    /*navigator need no bullet*/
-    padding: 2em 1.5em;
-}
-
-li.tab {
-    margin: 1.5em 1em;
-    padding: 0.2em 1em 0.1em 7px;
-    width: 4px;
-    background: darkolivegreen;
-    box-shadow: -4px 4px 10px 0px rgba(150, 4, 4, 0.62);
-    border-radius: 10% 90%;
-    transition: 1s;
-}
-
-li.tab a {
-    /*padding: 1em;*/
-    text-decoration: none;
-    color: #e3f1d5;
-    transition: 2s ease-in-out;
-}
-li.tab a:hover{
-    letter-spacing: 0.5em;
-    border-bottom: 1px #e3f1d5 solid;
-}
-li.tab:hover {
-    border-radius: 90% 10%;
-    background: #821639;
-}
-
-.copyright {
-    margin: 1em;
-    margin-top: 2em;
-}
-
-.copyright .contact li {
-    display: inline-block;
-    border: 1px #5a4b4b solid;
-    text-align: center;
-    size: 1px 1px;
-    width: 1.5em;
-    height: 1.5em;
-    list-style-type: none;
-    transition: 1s;
-}
-
-ul.contact.icon {
-    margin: inherit;
-    padding-left: inherit;
-}
-
-.copyright .contact li {
-    display: inline-block;
-    border: 1px #5a4b4b solid;
-    text-align: center;
-    size: 1px 1px;
-    width: 1.5em;
-    height: 1.5em;
-    list-style-type: none;
-    transform: 1.5s;
-}
-
-.copyright .contact li:hover {
-    border-color: transparent;
-    box-shadow: 0px 0px 2px 2px rgb(80, 48, 48);
-}
-
-.copyright .contact a.icon {
-    text-decoration: none;
-    color: #d29124;
-    font-family: 'fontawesome';
-    text-shadow: -3px 3px 2px #0e0a03;
-}
-
-.copyright .contact a.facebook:before {
-    content: "\f09a";
-}
-
-.copyright .contact a.github:before {
-    content: '\f09b';
-}
-
-.copyright .contact a.twitter:before {
-    content: '\f099';
-}
-
-h6.copyright {
+nav > ul {
     text-align: right;
-    size: 0.5em;
-    color: #8c5656;
+    padding-left: 0px;
+    background-color: #4e4071;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav > ul > li {
+    /*first layer*/
+    display: inline-block;
+    border-right: 1px white solid;
+    padding: 5px 5px;
+    /*640 /4 = 160px || prevent so define 20% of 640px*/
+    width: 20%;
+    box-sizing: border-box;
+    position: relative;
+    /*top: 0;*/
+    /*height: 40px;*/
+    background-color: #4e4071;
+    transition: 5s ease;
 }
 
 
-/*End of the navigator*/
+/*---sub list*/
+
+li > ul {
+    position: absolute;
+    right: -1px;
+    background-color: #4e4071;
+    box-sizing: border-box;
+    border-right: 1px white solid;
+    transition: 5s ease-out;
+    overflow: hidden;
+    max-height: 0px;
+    padding-top: 5px;
+}
+
+nav > ul > li> ul > li {
+    display: block;
+    padding: 5px;
+}
+
+
+/*---sublist display*/
+
+li:hover ul {
+    /*remember to set the max-height a NUMBER*/
+    max-height: 600px;
+}
+
 
 /* ==========================================================================
    Helper classes
