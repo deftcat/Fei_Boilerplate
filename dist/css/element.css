@@ -25,6 +25,7 @@ figure {
     height: inherit;
     position: relative;
     margin: 0px;
+    transition: .5s linear;
 }
 
 figure img {
@@ -39,8 +40,8 @@ figure img {
 figure figcaption {
     position: absolute;
     top: 0;
-    -webkit-transition: 1s ease-out;
-    transition: 1s ease-out;
+    -webkit-transition: .5s ease-out;
+    transition: .5s ease-out;
 }
 
 figure a {
@@ -63,7 +64,10 @@ div.description > h3:first-child {
 }
 
 div.snapshot:hover figcaption {
-    top: 50%;
-    -webkit-transform: scale(2);
-    transform: scale(2);
+    top: 20%;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+div.snapshot:hover figure{
+    box-shadow: 0 0 20px 10px rgba(193, 189, 137, 0.5)
 }
