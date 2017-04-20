@@ -13,14 +13,41 @@
     <link rel="stylesheet" href="../css/main.css">
     <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
     <style type="text/css">
-        .box{
-            width: 250px;
-            height: 200px;
-            position: absolute;
-        }
-        #box1{
-            background-color: green;
-        }
+    #wapper {
+        position: relative;
+        top: 10px;
+        width: 1250px;
+    }
+    
+    .box {
+        width: 250px;
+        height: 600px;
+        position: absolute;
+    }
+    
+    #box1 {
+        background-color: #FB9EFF;
+    }
+    
+    #box2 {
+        background-color: #E28CE5;
+        left: 250px;
+    }
+    
+    #box3 {
+        background-color: #BC76BF;
+        left: 500px;
+    }
+    
+    #box4 {
+        background-color: #7E4F7F;
+        left: 750px;
+    }
+    
+    #box5 {
+        background-color: #3F2740;
+        left: 1000px;
+    }
     </style>
 </head>
 
@@ -29,8 +56,14 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
     <!-- Add your site or application content here -->
-    <p>Hello world! This is HTML5 Boilerplate.</p>
-    <div id='box1' class="box"></div>
+    <!-- <p>Hello world! This is HTML5 Boilerplate.</p> -->
+    <div id='wapper'>
+        <div id='box1' class="box">1</div>
+        <div id='box2' class="box">2</div>
+        <div id='box3' class="box">3</div>
+        <div id='box4' class="box">4</div>
+        <div id='box5' class="box">5</div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script>
     window.jQuery || document.write('<script src="../js/vendor/jquery-3.1.1..min.js"><\/script>')
@@ -48,7 +81,158 @@
     ga('send', 'pageview')
     </script>
     <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-    <script type="text/javascript" src='../js/collapse.js'></script>
+    <script type="text/javascript">
+    // var $myTarget = 700;
+    var $speed = 8;
+    var $animateOpt = {
+        duration: 500,
+        queue: false,
+        easing: 'linear'
+    };
+    // var $myPos = $('#box1')[0].offsetLeft;
+    var $parentWidth = $('#wapper').width();
+    var $tarWidth = 50,
+        $curWidth, $curPos;
+    var $contentWidth = $parentWidth - $tarWidth * 4;
+    // pure javaScript
+    // function boxMove() {
+    //     var $myPos = $('#box1').offset().left;
+    //     $myPos += ($myTarget - $myPos) / $speed;
+    //     console.log($('#box1').offset().left);
+    //     $('#box1').offset({
+    //         left: $myPos
+    //     });
+    //     setTimeout("boxMove()", 10);
+    //     //equal to setTimeout(boxMove, 10);setTimeout("boxMove();", 10);
+    //     // if use setTimeout(boxMove(), 10); will loop
+    // }
+
+    // all loaded including img etc
+    $(window).on('load', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        // boxMove();
+        // $('#box2').on('mouseover', function(event) {
+        //     event.preventDefault();
+        //     /* Act on the event */
+        //     left2Move();
+        // });
+        $('#box3').mouseover(function(event) {
+            /* Act on the event */
+            $("#box1").animate({
+                width: $parentWidth - $tarWidth * 4,
+            }, $animateOpt);
+            $('#box2').animate({
+                width: $tarWidth,
+                left: $tarWidth * 1
+            }, $animateOpt);
+            $('#box3').animate({
+                width: $parentWidth - $tarWidth * 4,
+                left: $tarWidth * 2,
+            }, $animateOpt);
+            $('#box4').animate({
+                width: $tarWidth,
+                left: $parentWidth - $tarWidth * 2,
+            }, $animateOpt);
+            $('#box5').animate({
+                width: $tarWidth,
+                left: $parentWidth - $tarWidth
+            }, $animateOpt);
+        });
+        $('#box1').mousemove(function(event) {
+            /* Act on the event */
+            $("#box1").animate({
+                width: $parentWidth - $tarWidth * 4,
+            }, $animateOpt);
+            $('#box2').animate({
+                width: $tarWidth,
+                left: $parentWidth - $tarWidth * 4
+            }, $animateOpt);
+            $('#box3').animate({
+                width: $tarWidth,
+                left: $parentWidth - $tarWidth * 3
+            }, $animateOpt);
+            $('#box4').animate({
+                width: $tarWidth,
+                left: $parentWidth - $tarWidth * 2,
+            }, $animateOpt);
+            $('#box5').animate({
+                width: $tarWidth,
+                left: $parentWidth - $tarWidth
+            }, $animateOpt);
+        });
+        $('#box2').mousemove(function(event) {
+            /* Act on the event */
+            $("#box1").animate({
+                width: $tarWidth
+            }, $animateOpt);
+            $('#box2').animate({
+                width: $parentWidth - $tarWidth * 4,
+                left: $tarWidth
+            }, $animateOpt);
+            $('#box3').animate({
+                width: $tarWidth,
+                left: $parentWidth - $tarWidth * 3
+            }, $animateOpt);
+            $('#box4').animate({
+                width: $tarWidth,
+                left: $parentWidth - $tarWidth * 2,
+            }, $animateOpt);
+            $('#box5').animate({
+                width: $tarWidth,
+                left: $parentWidth - $tarWidth
+            }, $animateOpt);
+        });
+        $('#box4').mousemove(function(event) {
+            /* Act on the event */
+            $("#box1").animate({
+                width: $tarWidth
+            }, $animateOpt);
+            $('#box2').animate({
+                width: $tarWidth,
+                left: $tarWidth
+            }, $animateOpt);
+            $('#box3').animate({
+                width: $tarWidth,
+                left: $tarWidth * 2
+            }, $animateOpt);
+            $('#box4').animate({
+                width: $parentWidth - $tarWidth * 4,
+                left: $tarWidth * 3,
+            }, $animateOpt);
+            $('#box5').animate({
+                width: $tarWidth,
+                left: $parentWidth - $tarWidth
+            }, $animateOpt);
+        });
+        $('#box5').mousemove(function(event) {
+            /* Act on the event */
+            $("#box1").animate({
+                width: $tarWidth
+            }, $animateOpt);
+            $('#box2').animate({
+                width: $tarWidth,
+                left: $tarWidth
+            }, $animateOpt);
+            $('#box3').animate({
+                width: $tarWidth,
+                left: $tarWidth * 2
+            }, $animateOpt);
+            $('#box4').animate({
+                width: $tarWidth,
+                left: $tarWidth * 3,
+            }, $animateOpt);
+            $('#box5').animate({
+                width: $parentWidth - $tarWidth * 4,
+                left: $tarWidth * 4
+            }, $animateOpt);
+        });
+    });
+    //load dom
+    $(document).ready(function() {
+
+    });
+    </script>
 </body>
 
 </html>
