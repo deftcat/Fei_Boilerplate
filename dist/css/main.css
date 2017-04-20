@@ -122,14 +122,15 @@ h6 {
 
 nav {
     margin: 0 auto;
-    width: 640px;
+    width: 800px;
     /*-webkit-padding-start: 0px;*/
-    /*2 span 8 = 80*8 = 640px*/
+    /*2 span 10 = 80*10 = 800px*/
 }
 
 nav a {
     font-size: 1.5em;
     color: wheat;
+    text-decoration: none;
 }
 
 nav > ul {
@@ -147,8 +148,8 @@ nav > ul > li {
     display: inline-block;
     border-right: 1px white solid;
     padding: 5px 5px;
-    /*640 /4 = 160px || prevent so define 20% of 640px*/
-    width: 20%;
+    /*800 /4 = 160px || prevent so define 20% of 640px*/
+    width: 24%;
     box-sizing: border-box;
     position: relative;
     /*top: 0;*/
@@ -170,6 +171,7 @@ li > ul {
     overflow: hidden;
     max-height: 0px;
     padding-top: 5px;
+    width: 103%;
 }
 
 nav > ul > li> ul > li {
