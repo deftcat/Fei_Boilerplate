@@ -20,7 +20,7 @@
     }
     
     .box {
-        width: 250px;
+        width: 50px;
         height: 600px;
         position: absolute;
     }
@@ -31,22 +31,23 @@
     
     #box2 {
         background-color: #E28CE5;
-        left: 250px;
+        left: 50px;
     }
     
     #box3 {
         background-color: #BC76BF;
-        left: 500px;
+        left: 100px;
     }
     
     #box4 {
         background-color: #7E4F7F;
-        left: 750px;
+        left: 150px;
     }
     
     #box5 {
         background-color: #3F2740;
-        left: 1000px;
+        left: 200px;
+        width: 1050px;
     }
     </style>
 </head>
@@ -110,6 +111,7 @@
     // all loaded including img etc
     $(window).on('load', function(event) {
         event.preventDefault();
+
         /* Act on the event */
         // boxMove();
         // $('#box2').on('mouseover', function(event) {
@@ -117,32 +119,10 @@
         //     /* Act on the event */
         //     left2Move();
         // });
-        $('#box3').mouseover(function(event) {
-            /* Act on the event */
-            $("#box1").animate({
-                width: $parentWidth - $tarWidth * 4,
-            }, $animateOpt);
-            $('#box2').animate({
-                width: $tarWidth,
-                left: $tarWidth * 1
-            }, $animateOpt);
-            $('#box3').animate({
-                width: $parentWidth - $tarWidth * 4,
-                left: $tarWidth * 2,
-            }, $animateOpt);
-            $('#box4').animate({
-                width: $tarWidth,
-                left: $parentWidth - $tarWidth * 2,
-            }, $animateOpt);
-            $('#box5').animate({
-                width: $tarWidth,
-                left: $parentWidth - $tarWidth
-            }, $animateOpt);
-        });
         $('#box1').mousemove(function(event) {
             /* Act on the event */
-            $("#box1").animate({
-                width: $parentWidth - $tarWidth * 4,
+            $(this).animate({
+                width: $contentWidth,
             }, $animateOpt);
             $('#box2').animate({
                 width: $tarWidth,
@@ -166,8 +146,8 @@
             $("#box1").animate({
                 width: $tarWidth
             }, $animateOpt);
-            $('#box2').animate({
-                width: $parentWidth - $tarWidth * 4,
+            $(this).animate({
+                width: $contentWidth,
                 left: $tarWidth
             }, $animateOpt);
             $('#box3').animate({
@@ -183,6 +163,30 @@
                 left: $parentWidth - $tarWidth
             }, $animateOpt);
         });
+
+        $('#box3').mouseover(function(event) {
+            /* Act on the event */
+            $("#box1").animate({
+                width: $parentWidth - $tarWidth * 4,
+            }, $animateOpt);
+            $('#box2').animate({
+                width: $tarWidth,
+                left: $tarWidth * 1
+            }, $animateOpt);
+            $(this).animate({
+                width: $contentWidth,
+                left: $tarWidth * 2,
+            }, $animateOpt);
+            $('#box4').animate({
+                width: $tarWidth,
+                left: $parentWidth - $tarWidth * 2,
+            }, $animateOpt);
+            $('#box5').animate({
+                width: $tarWidth,
+                left: $parentWidth - $tarWidth
+            }, $animateOpt);
+        });
+
         $('#box4').mousemove(function(event) {
             /* Act on the event */
             $("#box1").animate({
@@ -196,8 +200,8 @@
                 width: $tarWidth,
                 left: $tarWidth * 2
             }, $animateOpt);
-            $('#box4').animate({
-                width: $parentWidth - $tarWidth * 4,
+            $(this).animate({
+                width: $contentWidth,
                 left: $tarWidth * 3,
             }, $animateOpt);
             $('#box5').animate({
@@ -222,8 +226,8 @@
                 width: $tarWidth,
                 left: $tarWidth * 3,
             }, $animateOpt);
-            $('#box5').animate({
-                width: $parentWidth - $tarWidth * 4,
+            $(this).animate({
+                width: $contentWidth,
                 left: $tarWidth * 4
             }, $animateOpt);
         });
