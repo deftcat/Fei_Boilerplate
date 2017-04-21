@@ -1,7 +1,7 @@
 article {
     width: 800px;
     height: 400px;
-    background-color: #25546f;
+    background-color: #563951;
     /*2span10 = 80px * 10  = 800px*/
     margin: 0 auto;
     /*for show the border*/
@@ -68,6 +68,7 @@ div.snapshot:hover figcaption {
     -webkit-transform: scale(1.5);
     transform: scale(1.5);
 }
-div.snapshot:hover figure{
+
+div.snapshot:hover figure {
     box-shadow: 0 0 20px 10px rgba(193, 189, 137, 0.5)
 }
