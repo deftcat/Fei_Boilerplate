@@ -30,7 +30,8 @@
     }
     
     #box2 {
-        background-color: #E28CE5;
+        background-color: #E28CE5
+;
         left: 50px;
     }
     
@@ -49,6 +50,21 @@
         left: 200px;
         width: 1050px;
     }
+    
+    div.title {
+        position: absolute;
+        width: 50px;
+        height: 100%;
+    }
+    
+    div.box h2 {
+        transform-origin: left top;
+        white-space: nowrap;
+        position: absolute;
+        top: 350px;
+        transform: rotate(-90deg);
+        background-color: transparent;
+    }
     </style>
 </head>
 
@@ -59,11 +75,16 @@
     <!-- Add your site or application content here -->
     <!-- <p>Hello world! This is HTML5 Boilerplate.</p> -->
     <div id='wapper'>
-        <div id='box1' class="box">1</div>
-        <div id='box2' class="box">2</div>
-        <div id='box3' class="box">3</div>
-        <div id='box4' class="box">4</div>
-        <div id='box5' class="box">5</div>
+        <div id='box1' class="box">
+            <h2>Contact Us</h2></div>
+        <div id='box2' class="box">
+            <h2>Show</h2></div>
+        <div id='box3' class="box">
+            <h2>Cast</h2></div>
+        <div id='box4' class="box">
+            <h2>Information</h2></div>
+        <div id='box5' class="box">
+            <h2>Cover</h2></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script>
