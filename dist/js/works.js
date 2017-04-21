@@ -1,7 +1,8 @@
 var $json = [{
-        'link': 'light_bulb.html',
+        'link': './designs/light_bulb.html',
         'img': './designs/light_bulb.png',
         'figcaption': 'Light Bulb',
+        'tag': ['element', 'css'],
         'note': 'use html to draw the bulb div basic position involved css use animation alternate for the animation',
         'coding': ['position: absolute, relative', ' @keyframes, animation',
             'transform: translateX(px) rotate(deg)'
@@ -9,14 +10,26 @@ var $json = [{
         'ref': 'http://codepen.io/Simentesempre/pen/raoERY',
 
     }, {
-        'link': 'flipCard.html',
+        'link': './designs/flipCard.html',
         'img': './designs/flip_card.png',
         'figcaption': 'Flip Card',
+        'tag': ['element', 'css'],
         'note': '3d perspective use div card to control the animation perspective to set the distance of crad(box) rotateX and roateY to transition two cards',
         'coding': ['perspective ', ' transition, pseudo:hover',
             'transform: rotateX  roateY'
         ],
         'ref': 'https://desandro.github.io/3dtransforms/docs/card-flip.html',
+
+    }, {
+        'link': './layout/collapse.html',
+        'img': './layout/collapse.png',
+        'figcaption': 'Collapse',
+        'tag': ['layout', 'css', 'javascript'],
+        'note': '...',
+        'coding': ['transform-origin ', ' setTimeout',
+            'animate : queue - false'
+        ],
+        'ref': 'ch3',
 
     }
 
