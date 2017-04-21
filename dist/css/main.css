@@ -116,7 +116,14 @@ h6 {
     color: wheat;
     /*font-family: 'Tangerine', cursive;*/
 }
-
+section {
+    width: 800px;
+    /*2span10 = 80px * 10  = 800px*/
+    margin: 0 auto;
+    /*border: 1px white solid;*/
+    /*  display: table;*/
+    /*for show the border*/
+}
 
 /*navigator */
 
@@ -148,7 +155,7 @@ nav > ul > li {
     display: inline-block;
     border-right: 1px white solid;
     padding: 5px 5px;
-    /*800 /4 = 160px || prevent so define 20% of 640px*/
+    /*800 /4 = 160px || prevent so define 24% of 640px*/
     width: 24%;
     box-sizing: border-box;
     position: relative;
@@ -161,7 +168,7 @@ nav > ul > li {
 
 /*---sub list*/
 
-li > ul {
+/*nav li > ul {
     position: absolute;
     right: -1px;
     background-color: #4e4071;
@@ -178,14 +185,15 @@ nav > ul > li> ul > li {
     display: block;
     padding: 5px;
 }
+*/
 
 
 /*---sublist display*/
 
-li:hover ul {
+/*nav li:hover ul {*/
     /*remember to set the max-height a NUMBER*/
-    max-height: 600px;
-}
+    /*max-height: 600px;*/
+/*}*/
 
 
 /* ==========================================================================
