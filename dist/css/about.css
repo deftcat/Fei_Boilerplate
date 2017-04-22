@@ -30,10 +30,13 @@ article.education{
     width: 460px;
     /*4span6 - 10*2 = 80*6 - 20 = 460*/
 }
-
-article.profile {
-    padding: 5% 0px;
+article.interest, article.award{
+    width: 380px;
+    /*2span 5 -10*2 = 80*5 - 20 = 380*/
 }
+/*article.profile {
+    padding: 5% 0px;
+}*/
 
 article li {
     /*list-style-type: none;*/
