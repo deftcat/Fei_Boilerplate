@@ -118,7 +118,7 @@ a.icon.email:before {
 
 a.icon span {
     transform: translateY(-20px) rotateX(90deg);
-    transition: 1s ease-in-out;
+    transition: 0.3s ease-out;
 }
 
 a.icon:hover > span {
