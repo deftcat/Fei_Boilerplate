@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    font-size: 100%;
+    font-family: Helvetica, sans-serf;
+}
+
+header,
+footer {
+    margin: 0px;
+    padding: 10px 40px;
+    text-align: center;
+    color: black;
+}
+
+footer {
+    background-color: gray;
+    text-align: right;
+    font-size: 0.5em;
+}
+
+#nav-collpase {
+    display: none;
+    color: orange;
+    background-color: brown;
+    text-align: left;
+    /*width:100%;*/
+    padding: 5px;
+}
+
+.active {
+    display: block;
+}
+
+nav {
+    width: 100%;
+    padding: 1px;
+    background-color: brown;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navigation li {
+    width: 60px;
+    border-top: 1px gray solid;
+    border-radius: 30px;
+    /*margin: 5px 10px;*/
+    padding: 10px 40px;
+    display: inline-block;
+}
+
+#container {
+    margin: 0 auto;
+    width: 95%;
+    padding: 0.625em 1% 1.5em;
+    /* 10px÷16px 10px÷948, 24px÷16px*/
+}
+
+aside {
+    /*float: right;*/
+    /*margin-right: 2.5%; /*24/950*/
+    width: 300px;
+    /*300÷950*/
+    display: table-cell;
+}
+
+.main {
+    /*float: left;*/
+    /*width: 63%; /*600÷950*/
+    display: table-cell;
+    padding-right: 5%;
+}
+
+aside img,
+.main img {
+    width: 100%;
+    max-width: 100%;
+}
+
+aside h2 {
+    border-bottom: 2px gray solid;
+}
+
+blockquote {
+    font-family: italic;
+}
+
+cite {
+    display: block;
+    color: gray;
+}
+
+
+/*for bigger window*/
+
+@media all and (min-width: 75em) {
+    /*1200px/16px*/
+    .main section {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+        -webkit-column-gap: 1.5em;
+        -moz-column-gap: 1.5em;
+        column-gap: 1.5em;
+    }
+}
+
+
+/* you should put the special css at the bottom of css to overwrite*/
+
+@media all and (max-width: 37.5em) {
+    nav {
+        color: white;
+        display: none;
+    }
+    aside {
+        display: block;
+    }
+    #nav-collpase {
+        display: block;
+    }
+}
