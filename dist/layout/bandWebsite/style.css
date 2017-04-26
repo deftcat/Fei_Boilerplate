@@ -1,0 +1,137 @@
+body {
+    width: 1200px;
+    height: 1000px;
+    background-image: url('./images/background.jpg');
+    background-size: cover;
+}
+
+header,
+main,
+footer {
+    margin: 0px 120px;
+    width: 960px;
+    clear: both;
+}
+
+div#title {
+    width: 330px;
+    height: 120px;
+    background-size: cover;
+    float: left;
+    background-image: url('./images/title.png');
+}
+
+nav {
+    float: right;
+    width: 530px;
+}
+
+nav ul {
+    margin-top: 0px;
+}
+
+#nav li {
+    text-align: center;
+    padding: 60px 1px 30px;
+    display: inline-block;
+    width: 90px;
+    color: #79705b;
+}
+
+#nav li.active {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+main {
+    padding: 10px
+}
+
+section#main {
+    color: rgb(199, 199, 199);
+    background-image: url('./images/sectionbg.jpg');
+    height: 410px;
+    background-size: cover;
+    margin: 50px 26px 0px;
+    position: relative;
+}
+
+section#main h1 {
+    /*margin-top: 80px;*/
+    padding-left: 60px;
+    padding-top: 90px;
+    width: 500px
+}
+
+section#main ul {
+    line-height: 3em;
+    text-decoration: underline;
+    width: 300px;
+    padding-left: 90px;
+    list-style: none;
+    width: 500px;
+}
+
+section#main a {
+    color: rgb(199, 199, 199);
+}
+
+section#main img {
+    position: absolute;
+    top: 0px;
+    margin: 20px;
+    right: 0px;
+    width: 274px;
+    /*float: right;*/
+    object-fit: cover;
+}
+
+section:not(:first-child) {
+    /*900/3 = 300px */
+    width: 250px;
+    float: left;
+    margin: 20px;
+}
+
+section:not(:first-child) a {
+    color: black;
+}
+
+section p:first-line {
+    text-transform: uppercase;
+}
+
+section:last-child {
+    padding: 0px 30px;
+    text-align: center;
+}
+
+section div.icon {
+    display: inline-block;
+    text-align: center;
+    font-family: 'FontAwesome';
+    font-style: normal;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border-radius: 5%;
+    margin: 10px 20px 10px 30px;
+}
+
+section div.icon i {
+    font-size: xx-large;
+}
+
+footer {
+    padding-bottom: 1px;
+    font-size: small;
+    text-align: center;
+}
+
+footer i {
+    font-family: "FontAwesome";
+    font-weight: normal;
+}
+
+footer a {
+    color: black;
+}
