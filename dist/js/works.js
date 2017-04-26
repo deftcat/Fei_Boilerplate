@@ -1,6 +1,5 @@
 var $json = [{
         'link': 'http://data.gov.tw/wise_search?nodetype=metadataset',
-        'img': '',
         'figcaption': 'Government',
         'tag': ['layout', 'blog'],
         'note': 'connect api',
@@ -8,15 +7,20 @@ var $json = [{
         'ref': 'WiSe search'
     }, {
         'link': './layout/bandWebsite/bandWebsite.html',
-        'img': './layout/bandWebsite/bandWebsite.jpg',
         'figcaption': 'Band Website',
         'tag': ['layout', 'blog'],
         'note': 'design the page with photoshop, and praceice psd to layout',
         'points': ['photoshop', 'layout'],
         'ref': 'six reversion'
     }, {
+        'link': './layout/RWD/index.html',
+        'figcaption': 'RWD',
+        'tag': ['layout', 'RWD'],
+        'note': 'desing RWD page',
+        'points': ['RWD', 'layout'],
+        'ref': 'book'
+    }, {
         'link': './layout/letterpress/letterpress.html',
-        'img': './layout/letterpress/letterpress.jpg',
         'figcaption': 'letterpress',
         'tag': ['layout', 'blog'],
         'note': 'design the page with photoshop, and praceice psd to layout',
@@ -24,7 +28,6 @@ var $json = [{
         'ref': 'six reversion'
     }, {
         'link': './designs/light_bulb.html',
-        'img': './designs/light_bulb.png',
         'figcaption': 'Light Bulb',
         'tag': ['element', 'css'],
         'note': 'use html to draw the bulb div basic position involved css use animation alternate for the animation',
@@ -34,7 +37,6 @@ var $json = [{
         'ref': 'http://codepen.io/Simentesempre/pen/raoERY',
     }, {
         'link': './designs/flipCard.html',
-        'img': './designs/flip_card.png',
         'figcaption': 'Flip Card',
         'tag': ['element', 'css'],
         'note': '3d perspective use div card to control the animation perspective to set the distance of crad(box) rotateX and roateY to transition two cards',
@@ -45,7 +47,6 @@ var $json = [{
 
     }, {
         'link': './layout/collapse.html',
-        'img': './layout/collapse.png',
         'figcaption': 'Collapse',
         'tag': ['layout', 'css', 'javascript'],
         'note': '...',
