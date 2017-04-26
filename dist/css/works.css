@@ -20,7 +20,7 @@ article > div {
     background-color: gray;
 }
 
-figure {
+div.snapshot iframe {
     width: inherit;
     height: inherit;
     position: relative;
@@ -28,28 +28,23 @@ figure {
     transition: .5s linear;
 }
 
-figure img {
-    height: 100%;
-    width: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-    object-position: 50% 0%;
+div.snapshot h3 {
     position: absolute;
     top: 0;
-}
-
-figure figcaption {
-    position: absolute;
-    top: 0;
-    -webkit-transition: .2s ease-out;
-    transition: .2s ease-out;
+    -webkit-transition: padding-left .2s ease-out;
+    transition: padding-left .2s ease-out;
+    /*transition: text-decoration .2s ease 1s;*/
     background-color: #2d1529;
     padding: 10px;
 }
 
-figure a {
-    color: wheat;
-    text-decoration: none;
+div.snapshot {
+    position: relative;
+    transition: .5s linear;
+}
+
+div.snapshot * {
+    position: absolute;
 }
 
 div.description > h3,
@@ -66,14 +61,11 @@ div.description > h3:first-child {
     margin-top: 0px;
 }
 
-div.snapshot:hover figcaption {
-    /*top: 20%;*/
-    padding-left: 40px;
-    /*opacity: 0.5;*/
-    /*-webkit-transform: scale(1.5);*/
-    /*transform: scale(1.5);*/
+div.snapshot:hover h3 {
+    padding-left: 50%;
+    text-decoration: underline;
 }
 
-div.snapshot:hover figure {
+div.snapshot:hover {
     box-shadow: 0 0 20px 10px rgba(193, 189, 137, 0.5)
 }

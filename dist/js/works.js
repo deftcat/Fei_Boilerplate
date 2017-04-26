@@ -1,4 +1,12 @@
 var $json = [{
+        'link': 'http://data.gov.tw/wise_search?nodetype=metadataset',
+        'img': '',
+        'figcaption': 'Government',
+        'tag': ['layout', 'blog'],
+        'note': 'connect api',
+        'points': ['project', 'layout'],
+        'ref': 'WiSe search'
+    }, {
         'link': './layout/bandWebsite/bandWebsite.html',
         'img': './layout/bandWebsite/bandWebsite.jpg',
         'figcaption': 'Band Website',
@@ -59,10 +67,13 @@ $(document).ready(function() {
         var $points = $json[i].points;
         var $ref = $json[i].ref;
         var $divimg = $('<div />', { class: 'snapshot' });
-        var $figure = $('<figure/>', { 'data-link': $link })
-        var $img = $('<img>', { src: $img, alt: $figcaption });
-        var $data = $('<figcaption>' + $figcaption + '</figcaption>');
-        $divimg.append($figure.append($img).append($data));
+        // var $figure = $('<figure/>', { 'data-link': $link })
+        var $iframe = $('<iframe/>', { 'data-link': $link, 'src': $link });
+        // var $img = $('<img>', { src: $img, alt: $figcaption });
+        // var $data = $('<figcaption>' + $figcaption + '</figcaption>');
+        var $data = $('<h3>' + $figcaption + '</h3>');
+        // $divimg.append($figure.append($iframe).append($data));
+        $divimg.append($iframe).append($data);
         var $divdes = $('<div />').addClass('description');
         $divdes.append($('<h3>Note</h3>')).append($('<p>' + $note + '</p>'));
         $divdes.append($('<h3>Coding Point</h3>'));
@@ -75,15 +86,18 @@ $(document).ready(function() {
         ($('<article />').append($divimg).append($divdes)).appendTo('section');
 
     }
+    // $('div.snapshot')
     $('div.snapshot')
         .on('mouseover', function(event) {
             event.preventDefault();
             /* Act on the event */
             $(this).css('cursor', 'pointer');
+
         })
         .on('click', function(event) {
             event.preventDefault();
             /* Act on the event */
-            window.open($(this).find('figure').data('link'));
+            console.log($(this).find('iframe').data('link'));
+            window.open($(this).find('iframe').data('link'));
         });
 });
