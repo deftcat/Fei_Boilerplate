@@ -1,21 +1,36 @@
 var $json = [{
+        'link': './layout/bandWebsite/bandWebsite.html',
+        'img': './layout/bandWebsite/bandWebsite.jpg',
+        'figcaption': 'Band Website',
+        'tag': ['layout', 'blog'],
+        'note': 'design the page with photoshop, and praceice psd to layout',
+        'points': ['photoshop', 'layout'],
+        'ref': 'six reversion'
+    }, {
+        'link': './layout/letterpress/letterpress.html',
+        'img': './layout/letterpress/letterpress.jpg',
+        'figcaption': 'letterpress',
+        'tag': ['layout', 'blog'],
+        'note': 'design the page with photoshop, and praceice psd to layout',
+        'points': ['photoshop', 'layout'],
+        'ref': 'six reversion'
+    }, {
         'link': './designs/light_bulb.html',
         'img': './designs/light_bulb.png',
         'figcaption': 'Light Bulb',
         'tag': ['element', 'css'],
         'note': 'use html to draw the bulb div basic position involved css use animation alternate for the animation',
-        'coding': ['position: absolute, relative', ' @keyframes, animation',
+        'points': ['position: absolute, relative', ' @keyframes, animation',
             'transform: translateX(px) rotate(deg)'
         ],
         'ref': 'http://codepen.io/Simentesempre/pen/raoERY',
-
     }, {
         'link': './designs/flipCard.html',
         'img': './designs/flip_card.png',
         'figcaption': 'Flip Card',
         'tag': ['element', 'css'],
         'note': '3d perspective use div card to control the animation perspective to set the distance of crad(box) rotateX and roateY to transition two cards',
-        'coding': ['perspective ', ' transition, pseudo:hover',
+        'points': ['perspective ', ' transition, pseudo:hover',
             'transform: rotateX  roateY'
         ],
         'ref': 'https://desandro.github.io/3dtransforms/docs/card-flip.html',
@@ -26,7 +41,7 @@ var $json = [{
         'figcaption': 'Collapse',
         'tag': ['layout', 'css', 'javascript'],
         'note': '...',
-        'coding': ['transform-origin ', ' setTimeout',
+        'points': ['transform-origin ', ' setTimeout',
             'animate : queue - false'
         ],
         'ref': 'ch3',
@@ -41,7 +56,7 @@ $(document).ready(function() {
         var $img = $json[i].img;
         var $figcaption = $json[i].figcaption;
         var $note = $json[i].note;
-        var $codings = $json[i].coding;
+        var $points = $json[i].points;
         var $ref = $json[i].ref;
         var $divimg = $('<div />', { class: 'snapshot' });
         var $figure = $('<figure/>', { 'data-link': $link })
@@ -52,8 +67,8 @@ $(document).ready(function() {
         $divdes.append($('<h3>Note</h3>')).append($('<p>' + $note + '</p>'));
         $divdes.append($('<h3>Coding Point</h3>'));
         var $codeUl = $('<ul />');
-        for (var coding in $codings) {
-            $codeUl.append($('<li>' + $codings[coding] + '</li>'));
+        for (var point in $points) {
+            $codeUl.append($('<li>' + $points[point] + '</li>'));
         }
         $divdes.append(($('<code>').append($codeUl)));
         $divdes.append('<h3>Reference</h3>').append('<blockquote>' + $ref + '</blockquote>');
