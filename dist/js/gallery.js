@@ -1,13 +1,15 @@
 $(document).ready(function() {
     var fb_url = 'https://graph.facebook.com/v2.1/me';
-    var access_token = 'EAACEdEose0cBAPZAt1ax1c6kBY25fe6YemkWTgVWKf6VZCdbR3wTYanoVZCGEn9qyWXpWoSFZBtW5lBkwJ7sAHcz4oVpgheV9N58Yee2k1XO5YtV0YNd34HbLKv0EmDqntZAT9VZBr5oAuOStN4kVj4HhFDmOltY4cZAoxVNe6sIVY4xPESWFPIc8vGZAQPHD14ZD';
+    var access_token = 'EAACEdEose0cBAMuTQzEZAc5RGSJMByqug9KycExZB4gkwXH0lTOnTEOXCfDnYWSYwSJGzRenqiT1v4wViK1F2gBj678sl9iZC4PtqaRQcCKOZCsturtVxiZBUZCvWQXGUV34VTe2k7s0PzkFUvDmQ6mBYxdyJlZAcWUjepczxmJxZBaGcCHHniikYl0UkZCsVL6AZD';
     var fields = 'albums{photos{images,name,likes}}';
-    $.ajax({
+    var getPhotos = $.ajax({
             url: fb_url,
             type: 'GET',
             dataType: 'json',
             data: { access_token: access_token, fields: fields },
             beforeSend: function() {
+
+                console.log('ac:' + access_token);
                 $('ul').prepend('<li>').children().first().attr('id', 'loading');;
             }
         })
@@ -89,6 +91,42 @@ $(document).ready(function() {
             }
         });
     }
-
+    $('form').on('submit', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        // console.log($(this).find('#accToken').val());
+        access_token = $(this).find('#accToken').val();
+        $.ajax({
+                url: fb_url,
+                type: 'GET',
+                dataType: 'json',
+                data: { access_token: access_token, fields: fields },
+                beforeSend: function() {
+                    $('ul').empty();
+                    console.log('Inac:' + access_token);
+                    $('ul').prepend('<li>').children().first().attr('id', 'loading');;
+                }
+            })
+            .done(function(response) {
+                console.log("success");
+                console.log(response);
+                var albumid = '985172724832826';
+                var album = '';
+                for (index in response.albums.data) {
+                    if (response.albums.data[index].id == albumid) {
+                        gallery(response.albums.data[index].photos.data);
+                    }
+                }
+                // after finish the get_url then call the plugin
+                $('ul').jSlider();
+            })
+            .fail(function(response) {
+                console.log(response.error.message + "error");
+            })
+            .always(function() {
+                $('ul').children().remove('#loading'); //.find('id="loading"')
+                console.log("complete");
+            });
+    });
 
 });
