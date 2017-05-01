@@ -74,10 +74,6 @@
     // before document ready
     $('#pag_nav').hide();
     $(document).ready(function() {
-
-
-
-
         function pageList() {
             var $curInd = 0;
             var $asideList = $('#asideList');
@@ -100,7 +96,6 @@
             $ul.remove();
             // set the display list
             function setUpList($nodelist) {
-                console.log($nodelist);
                 for (var i = 0; i < $nodelist.length; i++) {
                     if (i === $curInd) {
                         // as its a dom (not object) so should assign display by style.display. not just .show() not  .hide()
@@ -115,7 +110,43 @@
             }
             var $pageUrl = $asideList.find('ul');
             setUpList($pageUrl);
-           setUpList
+            var $prev = $('#prev');
+            // CREARE with jquery
+            var $prev_a = $('<a />');
+            $prev_a.attr('href', '#');
+            $prev_a.text('Prev');
+            $prev.append($prev_a).click(function(event) {
+                /* Act on the event */
+                $curInd--;
+                setUpList($pageUrl);
+                setupNav();
+                return false;
+            });
+            var $next = $('#next');
+            // CREARE with jquery
+            var $next_a = $('<a />');
+            $next_a.attr('href', '#');
+            $next_a.text('Next');
+            $next.append($next_a).click(function(event) {
+                /* Act on the event */
+                $curInd++;
+                setUpList($pageUrl);
+                setupNav();
+                return false;
+            });
+            $('#pag_nav').show();
+            setupNav();
+
+            function setupNav() {
+                if ($curInd === 0) {
+                    $prev.hide();
+                } else if ($curInd === $pageUrl.length - 1) {
+                    $next.hide();
+                } else {
+                    $next.show();
+                    $prev.show();
+                }
+            }
         }
 
 
