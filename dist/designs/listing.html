@@ -1,0 +1,127 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+    <!-- Add your site or application content here -->
+    <p>Hello world! This is HTML5 Boilerplate.</p>
+    <aside>
+        <p id='pag_nav'>
+            <span id='prev'>prev</span>
+            <span id='next'>next</span>
+        </p>
+        <div id='asideList'>
+            <ul>
+                <li>0Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>1Nulla venenatis massa sit amet nibh tincidunt pharetra.</li>
+                <li>2Vivamus ut nibh tempus, venenatis dui et, lobortis est.</li>
+                <li>3Nullam dignissim mi eget efficitur dictum.</li>
+                <li>4Vestibulum id nisl ultrices, mattis neque vel, vulputate est.</li>
+                <li>5Aenean placerat ex sed felis scelerisque, sed maximus est congue.</li>
+                <li>Suspendisse vitae diam nec erat dapibus ultrices.</li>
+                </li>
+                <li>Donec condimentum ex vitae purus dapibus, eu semper augue eleifend.</li>
+                <li>Morbi a odio tempus, efficitur nisl sit amet, bibendum est.</li>
+                <li>Praesent vitae purus dictum, imperdiet erat id, posuere nunc.</li>
+                <li>Sed a ante non neque imperdiet posuere sed sed dolor.</li>
+                <li>Etiam vitae erat mattis, vestibulum sem vitae, laoreet diam.</li>
+                <li>Donec tincidunt elit in sollicitudin imperdiet.</li>
+                <li>Vivamus quis nisi vel lorem mattis elementum in eu orci.</li>
+                <li>Pellentesque non ligula et massa lacinia varius.</li>
+                <li>Nam id ante ac nisi volutpat malesuada at id metus.</li>
+                <li>Duis eleifend mi quis nulla consequat, ut consectetur urna convallis.</li>
+                <li>Ut ut ligula eget purus vestibulum rutrum.</li>
+                <li>Duis sit amet neque et ligula fermentum fermentum.</li>
+                <li>Ut quis mauris id odio rutrum luctus id sed massa.</li>
+                <li>Aliquam consectetur diam vel mi ultricies gravida.</li>
+                <li>Donec non justo at leo congue vestibulum et ac metus.</li>
+            </ul>
+        </div>
+    </aside>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script>
+    window.jQuery || document.write('<script src="../js/vendor/jquery-3.1.1..min.js"><\/script>')
+    </script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+    window.ga = function() {
+        ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    <script type="text/javascript">
+    // before document ready
+    $('#pag_nav').hide();
+    $(document).ready(function() {
+        var $curInd = 0;
+        var $asideList = $('#asideList');
+        // no aside for split
+        if (!$asideList) return;
+        var $ul = $asideList.find('ul');
+        var $li = $ul.children('li');
+        // console.log($li); 
+        var $liGrouplength = Math.ceil($li.length / 5);
+        var ulGroup = [];
+        for (var ul = 0; ul < $liGrouplength; ul++) {
+            ulGroup[ul] = $('<ul>');
+            for (var li = ul * 5; li < (ul + 1) * 5; li++) {
+                if ($li[li]) {
+                    ulGroup[ul].append($li[li]);
+                }
+            }
+            $asideList.append(ulGroup[ul]);
+        }
+        $ul.remove();
+        var $pageUrl = $asideList.find('ul');
+        setUplist($pageUrl);
+
+        function setUplist($nodelist) {
+            console.log($nodelist);
+            for (var i = 0; i < $nodelist.length; i++) {
+                if (i === $curInd) {
+                    // as its a dom (not object) so should assign display by style.display. not just .show() not  .hide()
+                    $nodelist[i].style.display = 'block';
+                } else {
+                    $nodelist[i].style.display = 'none';
+                }
+            }
+        }
+
+        function setUp() {
+            $curInd++;
+        }
+
+        // setUplist(ulGroup);
+
+        // $("next").on('click', function(event) {
+        //     event.preventDefault();
+        //     /* Act on the event */
+        //     setUp();
+        //     setUplist();
+        // });
+    });
+    </script>
+</body>
+
+</html>
