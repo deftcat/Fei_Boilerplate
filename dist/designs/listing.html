@@ -74,52 +74,52 @@
     // before document ready
     $('#pag_nav').hide();
     $(document).ready(function() {
-        var $curInd = 0;
-        var $asideList = $('#asideList');
-        // no aside for split
-        if (!$asideList) return;
-        var $ul = $asideList.find('ul');
-        var $li = $ul.children('li');
-        // console.log($li); 
-        var $liGrouplength = Math.ceil($li.length / 5);
-        var ulGroup = [];
-        for (var ul = 0; ul < $liGrouplength; ul++) {
-            ulGroup[ul] = $('<ul>');
-            for (var li = ul * 5; li < (ul + 1) * 5; li++) {
-                if ($li[li]) {
-                    ulGroup[ul].append($li[li]);
+
+
+
+
+        function pageList() {
+            var $curInd = 0;
+            var $asideList = $('#asideList');
+            // no aside for split
+            if (!$asideList) return;
+            //now for split
+            var $ul = $asideList.find('ul');
+            var $li = $ul.children('li');
+            var $liGrouplength = Math.ceil($li.length / 5);
+            var ulGroup = [];
+            for (var ul = 0; ul < $liGrouplength; ul++) {
+                ulGroup[ul] = $('<ul>');
+                for (var li = ul * 5; li < (ul + 1) * 5; li++) {
+                    if ($li[li]) {
+                        ulGroup[ul].append($li[li]);
+                    }
+                }
+                $asideList.append(ulGroup[ul]);
+            }
+            $ul.remove();
+            // set the display list
+            function setUpList($nodelist) {
+                console.log($nodelist);
+                for (var i = 0; i < $nodelist.length; i++) {
+                    if (i === $curInd) {
+                        // as its a dom (not object) so should assign display by style.display. not just .show() not  .hide()
+                        // $nodelist[i].style.display = 'block';
+                        // once want to use show, should change to eq method
+                        $nodelist.eq(i).show();
+                    } else {
+                        // $nodelist[i].style.display = 'none';
+                        $nodelist.eq(i).hide();
+                    }
                 }
             }
-            $asideList.append(ulGroup[ul]);
-        }
-        $ul.remove();
-        var $pageUrl = $asideList.find('ul');
-        setUplist($pageUrl);
-
-        function setUplist($nodelist) {
-            console.log($nodelist);
-            for (var i = 0; i < $nodelist.length; i++) {
-                if (i === $curInd) {
-                    // as its a dom (not object) so should assign display by style.display. not just .show() not  .hide()
-                    $nodelist[i].style.display = 'block';
-                } else {
-                    $nodelist[i].style.display = 'none';
-                }
-            }
+            var $pageUrl = $asideList.find('ul');
+            setUpList($pageUrl);
+           setUpList
         }
 
-        function setUp() {
-            $curInd++;
-        }
 
-        // setUplist(ulGroup);
-
-        // $("next").on('click', function(event) {
-        //     event.preventDefault();
-        //     /* Act on the event */
-        //     setUp();
-        //     setUplist();
-        // });
+        pageList();
     });
     </script>
 </body>
