@@ -15,6 +15,8 @@
             createdOn: 1397490980837
         }],
         'specification': 'meou~',
+        color: '#CCC',
+        remain : 30,
         'canPurchase': true,
         'soldOut': false,
         'images': [
@@ -36,6 +38,7 @@
             createdOn: 1397490980837
         }],
         'specification': 'nisi 40*rr',
+        color: 'Yellow',
         'canPurchase': true,
         'soldOut': false,
         'images': [
@@ -76,6 +79,12 @@
             this.review.createdOn = Date.now();
             product.reviews.push(this.review);
             this.review= {};
+        };
+    });
+    app.directive('productDescription',function(){
+        return{
+            restrict : 'E',
+            templateUrl: 'product-description.html'
         };
     });
 })();

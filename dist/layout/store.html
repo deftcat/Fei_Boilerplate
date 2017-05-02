@@ -16,12 +16,30 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style type="text/css">
-        .ng-valid.ng-dirty{
-            border-color: lightgreen;
-        }
-        .ng-invalid.ng-dirty{
-            border-color: #FA7871;
-        }
+    .ng-valid.ng-dirty {
+        border-color: lightgreen;
+    }
+    
+    .ng-invalid.ng-dirty {
+        border-color: #FA7871;
+    }
+    
+    section ul {
+        padding-left: 0px;
+        list-style: none;
+    }
+    
+    img.img-rounded {
+        width: 100%;
+    }
+    
+    button#toCart {
+        width: 100%;
+    }
+    
+    section {
+        margin-top: 10px;
+    }
     </style>
 </head>
 
@@ -35,80 +53,85 @@
         <h1 class="text-center">Animals for only you</h1>
         <h2 class="text-center">– an Angular store –</h2>
     </header>
-    <div class='list-group' ng-controller='gemController as store'>
-        <div ng-repeat='product in store.products' class="list-group-item">
-            <!-- <div class="col-md-3"> -->
-            <h3>{{product.name}}<em class="pull-right">{{product.price | currency}}</em></h3>
-            <div ng-show='product.images.length' ng-controller='GalleryController as gallery'>
-                <div class="img-wrap">
-                    <img height='200px' ng-src="{{product.images[gallery.current]}}">
-                </div>
-                <ul class="img-thumbnails clearfix">
-                    <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
-                        <img width='50px' ng-src="{{image}}" />
-                    </li>
-                </ul>
-            </div>
-            <button type="button" class="btn btn-default" ng-show="product.canPurchase">Add to Cart</button>
-            <section class="tab" ng-controller='tabController as tab'>
-                <ul class="nav nav-pills">
-                    <li ng-class='{active : tab.selectTab(1)}'><a href="" ng-click='tab.setTab(1)'>description</a></li>
-                    <li ng-class='{active : tab.selectTab(2)}'>
-                        <a href="" ng-click='tab.setTab(2)'>specification</a>
-                    </li>
-                    <li ng-class='{active : tab.selectTab(3)}'>
-                        <a href="" ng-click='tab.setTab(3)'>review</a>
-                    </li>
-                </ul>
-                <div ng-show='tab.selectTab(1)'>
-                    <h4>Description</h4>
-                    <blockquote>{{product.description}}</blockquote>
-                </div>
-                <div ng-show='tab.selectTab(2)'>
-                    <h4>specification</h4>
-                    <blockquote>{{product.specification}}</blockquote>
-                </div>
-                <div ng-show='tab.selectTab(3)'>
-                    <ul>
-                        <h4>Review</h4>
-                        <!-- review form -->
-                        <li ng-repeat='review in product.reviews'>
-                            <blockquote>
-                                <strong>{{review.stars}} Stars</strong> {{review.body}}
-                                <cite class="clearfix">—{{review.author}} on {{review.createdOn | date}}</cite>
-                            </blockquote>
+    <main class="row">
+        <div class='list-group list-group col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6' ng-controller='gemController as store'>
+            <div ng-repeat='product in store.products' class="list-group-item">
+                <!-- <div class="col-md-3"> -->
+                <h3>{{product.name}}<em class="pull-right">{{product.price | currency}}</em></h3>
+                <div ng-show='product.images.length' ng-controller='GalleryController as gallery'>
+                    <div class="img-wrap">
+                        <img class="img-rounded" ng-src="{{product.images[gallery.current]}}">
+                    </div>
+                    <ul class="img-thumbnails clearfix">
+                        <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
+                            <img width='50px' ng-src="{{image}}" />
                         </li>
                     </ul>
-                    <!--  Review Form -->
-                    <form name="reviewForm" ng-controller='reviewController as reviewCtrl' ng-submit='reviewForm.$valid && reviewCtrl.addReview(product)' novalidate>
-                    the form valid : {{reviewForm.$valid}}
-                        <!--  Live Preview -->
-                        <blockquote>
-                            <strong> {{reviewCtrl.review.stars}} Stars</strong> {{reviewCtrl.review.body}}
-                            <cite class="clearfix">-{{reviewCtrl.review.author}}</cite>
-                        </blockquote>
-                        <!--  Review Form -->
-                        <h4>Submit a Review</h4>
-                        <fieldset class="form-group">
-                            <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required>
-                                <option value="">Rate the Product</option>
-                            </select>
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the product..." title="Review"></textarea>
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="animals@example.org" title="Email" required />
-                        </fieldset>
-                        <fieldset class="form-group">
-                            <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
-                        </fieldset>
-                    </form>
                 </div>
-            </section>
-            <!-- </div> -->
+                <button id='toCart' type="button" class="btn btn-warning  btn-lg" ng-show="product.canPurchase">Add to Cart</button>
+                <section class="tab" ng-controller='tabController as tab'>
+                    <ul class="nav nav-pills">
+                        <li ng-class='{active : tab.selectTab(1)}'><a href="" ng-click='tab.setTab(1)'>description</a></li>
+                        <li ng-class='{active : tab.selectTab(2)}'>
+                            <a href="" ng-click='tab.setTab(2)'>specification</a>
+                        </li>
+                        <li ng-class='{active : tab.selectTab(3)}'>
+                            <a href="" ng-click='tab.setTab(3)'>review</a>
+                        </li>
+                    </ul>
+                    <div ng-show='tab.selectTab(1)'>
+                        <h4>Description</h4>
+                        <blockquote>{{product.description}}</blockquote>
+                    </div>
+                    <div ng-show='tab.selectTab(2)'>
+                        <h4>specification</h4>
+                        <blockquote>Size : {{product.specification}}
+                            <br> Color : {{product.color}}
+                            <br> Remain :
+                            <mark> {{product.remain}}</mark>
+                        </blockquote>
+                    </div>
+                    <div ng-show='tab.selectTab(3)'>
+                        <ul>
+                            <h4>Review</h4>
+                            <!-- review form -->
+                            <li ng-repeat='review in product.reviews'>
+                                <blockquote>
+                                    <strong>{{review.stars}} Stars</strong> {{review.body}}
+                                    <cite class="clearfix">—{{review.author}} on {{review.createdOn | date}}</cite>
+                                </blockquote>
+                            </li>
+                        </ul>
+                        <!--  Review Form -->
+                        <form name="reviewForm" ng-controller='reviewController as reviewCtrl' ng-submit='reviewForm.$valid && reviewCtrl.addReview(product)' novalidate>
+                            the form valid : {{reviewForm.$valid}}
+                            <!--  Live Preview -->
+                            <blockquote>
+                                <strong> {{reviewCtrl.review.stars}} Stars</strong> {{reviewCtrl.review.body}}
+                                <cite class="clearfix">-{{reviewCtrl.review.author}}</cite>
+                            </blockquote>
+                            <!--  Review Form -->
+                            <h4>Submit a Review</h4>
+                            <fieldset class="form-group">
+                                <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required>
+                                    <option value="">Rate the Product</option>
+                                </select>
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the product..." title="Review"></textarea>
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="animals@example.org" title="Email" required />
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+                            </fieldset>
+                        </form>
+                    </div>
+                </section>
+            </div>
         </div>
-    </div>
+    </main>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script>
     window.jQuery || document.write('<script src="../js/vendor/jquery-3.1.1..min.js"><\/script>')
