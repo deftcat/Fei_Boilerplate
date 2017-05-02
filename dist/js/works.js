@@ -1,10 +1,24 @@
 var $json = [{
+        'link': './layout/store.html',
+        'figcaption': 'Store',
+        'tag': ['layout', 'angular', 'module'],
+        'note': 'anuglar',
+        'points': ['angular1', 'layout', 'bootstrap'],
+        'ref': 'codeSchool'
+    }, {
         'link': 'http://data.gov.tw/wise_search?nodetype=metadataset',
         'figcaption': 'Government',
         'tag': ['layout', 'blog'],
         'note': 'connect api',
-        'points': ['project', 'layout'],
+        'points': ['project', 'layout', 'bootstrap'],
         'ref': 'WiSe search'
+    }, {
+        'link': './layout/gallery.html',
+        'figcaption': 'Facebook gallery',
+        'tag': ['layout', 'gallery'],
+        'note': 'connect facebook api, jquery exension',
+        'points': ['api', 'jQuery.fn'],
+        'ref': 'internet'
     }, {
         'link': './layout/bandWebsite/bandWebsite.html',
         'figcaption': 'Band Website',
@@ -13,12 +27,26 @@ var $json = [{
         'points': ['photoshop', 'layout'],
         'ref': 'six reversion'
     }, {
+        'link': './designs/cube.html',
+        'figcaption': 'Cube',
+        'tag': ['designs', 'css'],
+        'note': 'design cube with css',
+        'points': ['perspective', 'transition'],
+        'ref': 'internet'
+    }, {
         'link': './layout/RWD/index.html',
         'figcaption': 'RWD',
         'tag': ['layout', 'RWD'],
         'note': 'desing RWD page',
         'points': ['RWD', 'layout'],
         'ref': 'book'
+    }, {
+        'link': './designs/loadingBox.html',
+        'figcaption': 'Loading Box',
+        'tag': ['design', 'loading'],
+        'note': 'position one div, add animation',
+        'points': ['poisition', 'animation'],
+        'ref': 'internet'
     }, {
         'link': './layout/letterpress/letterpress.html',
         'figcaption': 'letterpress',
@@ -35,15 +63,15 @@ var $json = [{
             'transform: translateX(px) rotate(deg)'
         ],
         'ref': 'http://codepen.io/Simentesempre/pen/raoERY',
-    }, {
-        'link': './designs/flipCard.html',
-        'figcaption': 'Flip Card',
-        'tag': ['element', 'css'],
-        'note': '3d perspective use div card to control the animation perspective to set the distance of crad(box) rotateX and roateY to transition two cards',
-        'points': ['perspective ', ' transition, pseudo:hover',
-            'transform: rotateX  roateY'
-        ],
-        'ref': 'https://desandro.github.io/3dtransforms/docs/card-flip.html',
+        }, {
+     'link': './designs/flipCard.html',
+     'figcaption': 'Flip Card',
+     'tag': ['element', 'css'],
+     'note': '3d perspective use div card to control the animation perspective to set the distance of crad(box) rotateX and roateY to transition two cards',
+     'points': ['perspective ', ' transition, pseudo:hover',
+         'transform: rotateX  roateY'
+     ],
+     'ref': 'https://desandro.github.io/3dtransforms/docs/card-flip.html',
 
     }, {
         'link': './layout/collapse.html',
