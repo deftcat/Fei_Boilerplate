@@ -1,0 +1,124 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Loading box</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+div.square {
+        margin: 100px 150px;
+        /*        width: 100px;
+        height: 100px;
+        background-color: darkolivegreen;
+*/
+        /*transform: rotate(45deg);*/
+        /*animation: squAni 1s linear infinite;*/
+        position: relative;
+    }
+    
+    div.square:before {
+        z-index: 1;
+        content: '';
+        width: 50px;
+        height: 3px;
+        position: absolute;
+        top: 150px;
+        left: 75px;
+        background-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 20px 20px rgba(255, 255, 255, 0.2);
+        border-radius: 100%;
+        animation: shaAni 0.5s linear infinite;
+    }
+    
+    div.square:after {
+        z-index: -1;
+        transform: rotate(45deg);
+        left: 50px;
+        /*top: 50px;*/
+        content: '';
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        background: rgba(179, 220, 237, 1);
+        background: -moz-radial-gradient(center, ellipse cover, rgba(179, 220, 237, 1) 0%, rgba(41, 162, 227, 1) 50%, rgba(239, 245, 247, 1) 100%);
+        background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(179, 220, 237, 1)), color-stop(50%, rgba(41, 162, 227, 1)), color-stop(100%, rgba(239, 245, 247, 1)));
+        background: -webkit-radial-gradient(center, ellipse cover, rgba(179, 220, 237, 1) 0%, rgba(41, 162, 227, 1) 50%, rgba(239, 245, 247, 1) 100%);
+        background: -o-radial-gradient(center, ellipse cover, rgba(179, 220, 237, 1) 0%, rgba(41, 162, 227, 1) 50%, rgba(239, 245, 247, 1) 100%);
+        background: -ms-radial-gradient(center, ellipse cover, rgba(179, 220, 237, 1) 0%, rgba(41, 162, 227, 1) 50%, rgba(239, 245, 247, 1) 100%);
+        background: radial-gradient(ellipse at center, rgba(179, 220, 237, 1) 0%, rgba(41, 162, 227, 1) 50%, rgba(239, 245, 247, 1) 100%);
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#eff5f7', GradientType=1);
+        position: absolute;
+        animation: squAni 0.5s linear infinite;
+    }
+    
+    @keyframes shaAni {
+        100%,
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+    }
+    
+    @keyframes squAni {
+        0% {
+            transform: rotate(-90deg);
+            border-bottom-left-radius: 0%;
+            top: 0px;
+        }
+        20% {
+            border-bottom-left-radius: 10%;
+        }
+        50% {
+            top: 50px;
+            transform: rotate(-45deg);
+            border-bottom-left-radius: 40%;
+        }
+        80% {
+            border-bottom-left-radius: 10%;
+        }
+        100% {
+            top: 0px;
+            transform: rotate(0deg);
+        }
+    }
+}
+    </style>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+    <!-- Add your site or application content here -->
+    <!-- <p>Hello world! This is HTML5 Boilerplate.</p> -->
+    <div class="square"></div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script>
+    window.jQuery || document.write('<script src="../js/vendor/jquery-3.1.1..min.js"><\/script>')
+    </script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+    window.ga = function() {
+        ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</body>
+
+</html>
