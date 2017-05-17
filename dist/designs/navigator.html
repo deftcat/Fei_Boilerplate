@@ -1,0 +1,132 @@
+<!doctype html>
+<html class="no-js" lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--for the icon-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <style type="text/css">
+        
+nav {
+    margin: 0 auto;
+    width: 800px;
+    /*-webkit-padding-start: 0px;*/
+    /*2 span 10 = 80*10 = 800px*/
+}
+
+nav a {
+    font-size: 1.5em;
+    color: wheat;
+    text-decoration: none;
+}
+
+nav > ul {
+    text-align: right;
+    padding-left: 0px;
+    background-color: #4e4071;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav > ul > li {
+    /*first layer*/
+    display: inline-block;
+    border-right: 1px white solid;
+    padding: 5px 5px;
+    /*800 /4 = 160px || prevent so define 20% of 640px*/
+    width: 24%;
+    box-sizing: border-box;
+    position: relative;
+    /*top: 0;*/
+    /*height: 40px;*/
+    background-color: #4e4071;
+    transition: 5s ease;
+}
+
+
+/*---sub list*/
+
+nav li > ul {
+    position: absolute;
+    right: -1px;
+    background-color: #4e4071;
+    box-sizing: border-box;
+    border-right: 1px white solid;
+    transition: 5s ease-out;
+    overflow: hidden;
+    max-height: 0px;
+    padding-top: 5px;
+    width: 103%;
+}
+
+nav > ul > li> ul > li {
+    display: block;
+    padding: 5px;
+}
+
+
+/*---sublist display*/
+
+nav li:hover ul {
+    /*remember to set the max-height a NUMBER*/
+    max-height: 600px;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+    <!-- Add your site or application content here -->
+    <!-- <p>Hello world! This is HTML5 Boilerplate.</p> -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li id="design"><a href="#">Design</a>
+                    <ul>
+                        <li><a href="#">Element</a></li>
+                        <li><a href="#">Layout</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script>
+    window.jQuery || document.write('<script src="../js/vendor/jquery-3.1.1.min.js"><\/script>')
+    </script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+    window.ga = function() {
+        ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    <script type="text/javascript" src='../js/about.js'></script>
+</body>
+
+</html>
